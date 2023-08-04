@@ -1,0 +1,36 @@
+Number of variables: 2
+  Variable[0]: Result assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L5'
+- parameter 'gateName' => 'Orc'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.5360200529831924
+- parameter 'theta' => 0.8953905826575452
+- parameter 'operation' => 'CZ'
+- parameter 'lambda' => 0.44006395380743624
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 1
+
+  Variable[1]: Result assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L2'
+- parameter 'gateName' => 'Ord'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.3346452379401359
+- parameter 'theta' => 0.41163670622515913
+- parameter 'operation' => 'CRY'
+- parameter 'lambda' => 0.16710661986236053
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 1
+
+Number of attributes: 3
+  AggregatedFitness: 6.0
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -1.0
+  nrOfGates: 2.0
+  Depth: 2.0
+  nrOfNonlocalGates: 2.0
+  nrOfParams: 1.0
+Number of constraints: 0

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: quantum.circuit.lang.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: quantum.circuit.lang.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: quantum.circuit.lang.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: quantum.circuit.lang,
+ quantum.circuit.mm,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: quantum.circuit.lang.ide.contentassist.antlr,
+ quantum.circuit.lang.ide.contentassist.antlr.internal

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:qucircuit="http://www.eclipse.org/QuCircuit" xmlns:quope="http://www.eclipse.org/QuantumOpe">
+  <qucircuit:QuantumCircuit name="MomotExample" overlap="0.5">
+    <quantumRegisters name="qr" numberOfQubits="3"/>
+    <classicRegisters name="cr" numberOfBits="3"/>
+    <layers name="L1">
+      <quantumOperations xsi:type="qucircuit:ElementaryQuantumGate" name="e1">
+        <operations>
+          <operation href="../../src-library/quantum-operation.quope#Hadamard"/>
+        </operations>
+        <targetQubits xsi:type="qucircuit:RangeSelector" begin="0" end="2"/>
+      </quantumOperations>
+    </layers>
+    <layers name="L2">
+      <quantumOperations xsi:type="qucircuit:CompositeQuantumGate" name="c1">
+        <targetQubits xsi:type="qucircuit:ElementSelector" register="/0/@quantumRegisters.0" index="0"/>
+        <targetQubits xsi:type="qucircuit:ElementSelector" register="/0/@quantumRegisters.0" index="1"/>
+        <targetQubits xsi:type="qucircuit:ElementSelector" register="/0/@quantumRegisters.0" index="2"/>
+      </quantumOperations>
+    </layers>
+  </qucircuit:QuantumCircuit>
+  <qucircuit:Layer name="L2"/>
+  <qucircuit:Layer name="L3"/>
+  <qucircuit:Layer name="L4"/>
+  <qucircuit:Layer name="L5"/>
+  <quope:ConcreteQuantumOperation/>
+  <quope:QuantumOperationLibrary name="QuantumLibrary">
+    <operations xsi:type="quope:ConcreteQuantumOperation" name="CRY" paletteIconPath="platform:/plugin/quantum.operation.contribution/icons/cnot-gate.png" styleIconPath="">
+      <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      <parameter theta="true"/>
+      <fixedQuantumOperation numberOfTargetQubits="1" numberOfControlQubits="1" numberOfClassicBits="0"/>
+    </operations>
+    <operations xsi:type="quope:ConcreteQuantumOperation" name="CZ" paletteIconPath="platform:/plugin/quantum.operation.contribution/icons/cnot-gate.png" styleIconPath="">
+      <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      <parameter/>
+      <fixedQuantumOperation numberOfTargetQubits="1" numberOfControlQubits="1" numberOfClassicBits="0"/>
+    </operations>
+    <operations xsi:type="quope:ConcreteLoopOperation" name="StaticLoop">
+      <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+    </operations>
+    <operations xsi:type="quope:ConcreteLoopOperation" name="Power2Loop">
+      <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+    </operations>
+    <operations xsi:type="quope:ConcreteLoopOperation" name="GeneralLoop">
+      <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+    </operations>
+  </quope:QuantumOperationLibrary>
+  <ecore:EClass/>
+  <ecore:EClass/>
+  <ecore:EClass/>
+  <ecore:EClass/>
+  <ecore:EClass/>
+</xmi:XMI>

@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_JAYToBaKEe6-vaM0Cwog_A" name="quantum">
+  <imports href="http://www.eclipse.org/QuCircuit#/"/>
+  <imports href="http://www.eclipse.org/QuantumOpe#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_EvJtABagEe6CBuIoO36yxw" name="addElementaryQuantumGateToLayer">
+    <parameters xmi:id="_LEzFACMYEe6H6-_CkkV7TQ" name="layerName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__DhrgCMXEe6H6-_CkkV7TQ" name="cqgName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_nFRugBpXEe6fYe9pd6WaDQ" name="gateName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_u9mdkCSHEe65g_RjOpngjQ" name="operation" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="__DiSkCMXEe6H6-_CkkV7TQ" name="maxNoGates" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_hO-IgCMVEe6H6-_CkkV7TQ" name="noCQubits" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_hO-IgSMVEe6H6-_CkkV7TQ" name="noTQubits" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_EvMwUBagEe6CBuIoO36yxw" name="Lhs">
+      <nodes xmi:id="_hsSxwBagEe6CBuIoO36yxw" incoming="_m8D8QCMXEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_MLXEcCMYEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_W9dawBp1Ee67Bur7ziwYJA" outgoing="_MfG_kBsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+        <attributes xmi:id="_kCpL4CSHEe65g_RjOpngjQ" value="operation">
+          <type href="http://www.eclipse.org/QuantumOpe#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_IyZdQBsEEe6vFpL0BSZBSQ" name="fq" incoming="_MfG_kBsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation"/>
+        <attributes xmi:id="_ciX2gCMVEe6H6-_CkkV7TQ" value="noCQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfControlQubits"/>
+        </attributes>
+        <attributes xmi:id="_iIMPgCMVEe6H6-_CkkV7TQ" value="noTQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfTargetQubits"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_j4lkMCMXEe6H6-_CkkV7TQ" outgoing="_m8D8QCMXEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_lhNH0CMXEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_MfG_kBsEEe6vFpL0BSZBSQ" source="_W9dawBp1Ee67Bur7ziwYJA" target="_IyZdQBsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/fixedQuantumOperation"/>
+      </edges>
+      <edges xmi:id="_m8D8QCMXEe6H6-_CkkV7TQ" source="_j4lkMCMXEe6H6-_CkkV7TQ" target="_hsSxwBagEe6CBuIoO36yxw">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_EvMwURagEe6CBuIoO36yxw" name="Rhs">
+      <nodes xmi:id="_X8ymkBagEe6CBuIoO36yxw" name="addedGate" incoming="_sGEpABagEe6CBuIoO36yxw" outgoing="_2EHEYBmeEe6EALVw3ZVh6w _79jFcCQ9Ee6XAONWznPBUQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_jU5uUBagEe6CBuIoO36yxw" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_hsSxwRagEe6CBuIoO36yxw" incoming="_m8EjUCMXEe6H6-_CkkV7TQ" outgoing="_sGEpABagEe6CBuIoO36yxw">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_MLXEcSMYEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_yKhjsBmeEe6EALVw3ZVh6w" incoming="_2EHEYBmeEe6EALVw3ZVh6w" outgoing="_YeOC4Bp1Ee67Bur7ziwYJA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_W9eB0Bp1Ee67Bur7ziwYJA" incoming="_YeOC4Bp1Ee67Bur7ziwYJA" outgoing="_MfG_kRsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+        <attributes xmi:id="_kCpL4SSHEe65g_RjOpngjQ" value="operation">
+          <type href="http://www.eclipse.org/QuantumOpe#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_IyZdQRsEEe6vFpL0BSZBSQ" name="fq" incoming="_MfG_kRsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation"/>
+        <attributes xmi:id="_ciX2gSMVEe6H6-_CkkV7TQ" value="noCQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfControlQubits"/>
+        </attributes>
+        <attributes xmi:id="_iIMPgSMVEe6H6-_CkkV7TQ" value="noTQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfTargetQubits"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_j4lkMSMXEe6H6-_CkkV7TQ" outgoing="_m8EjUCMXEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_lhNH0SMXEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_7W4uECQ9Ee6XAONWznPBUQ" incoming="_79jFcCQ9Ee6XAONWznPBUQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+      </nodes>
+      <edges xmi:id="_sGEpABagEe6CBuIoO36yxw" source="_hsSxwRagEe6CBuIoO36yxw" target="_X8ymkBagEe6CBuIoO36yxw">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_2EHEYBmeEe6EALVw3ZVh6w" source="_X8ymkBagEe6CBuIoO36yxw" target="_yKhjsBmeEe6EALVw3ZVh6w">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+      <edges xmi:id="_YeOC4Bp1Ee67Bur7ziwYJA" source="_yKhjsBmeEe6EALVw3ZVh6w" target="_W9eB0Bp1Ee67Bur7ziwYJA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="_MfG_kRsEEe6vFpL0BSZBSQ" source="_W9eB0Bp1Ee67Bur7ziwYJA" target="_IyZdQRsEEe6vFpL0BSZBSQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/fixedQuantumOperation"/>
+      </edges>
+      <edges xmi:id="_m8EjUCMXEe6H6-_CkkV7TQ" source="_j4lkMSMXEe6H6-_CkkV7TQ" target="_hsSxwRagEe6CBuIoO36yxw">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+      <edges xmi:id="_79jFcCQ9Ee6XAONWznPBUQ" source="_X8ymkBagEe6CBuIoO36yxw" target="_7W4uECQ9Ee6XAONWznPBUQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_qW12gCMWEe6H6-_CkkV7TQ" name="checkEnoughQubitsAvailableOnLayer" conditionText="ocl:self.layers.quantumOperations->select(g | g.name=cqgName).oclAsType(CompositeQuantumGate).layers->select(l | l.name=layerName).quantumOperations.operations.operation.fixedQuantumOperation->collect(numberOfTargetQubits+numberOfControlQubits)->sum() &lt;= (3-(noCQubits+noTQubits))"/>
+    <attributeConditions xmi:id="_x5kysCMXEe6H6-_CkkV7TQ" name="checkMaxPermittedGatesForOracle" conditionText="ocl:QuantumOperation.allInstances()->select(qu | qu.name=cqgName).oclAsType(CompositeQuantumGate).layers->collect(l | l.quantumOperations)->size() &lt; maxNoGates"/>
+    <mappings xmi:id="_hsSxwhagEe6CBuIoO36yxw" origin="_hsSxwBagEe6CBuIoO36yxw" image="_hsSxwRagEe6CBuIoO36yxw"/>
+    <mappings xmi:id="_W9eB0Rp1Ee67Bur7ziwYJA" origin="_W9dawBp1Ee67Bur7ziwYJA" image="_W9eB0Bp1Ee67Bur7ziwYJA"/>
+    <mappings xmi:id="_IyZdQhsEEe6vFpL0BSZBSQ" origin="_IyZdQBsEEe6vFpL0BSZBSQ" image="_IyZdQRsEEe6vFpL0BSZBSQ"/>
+    <mappings xmi:id="_j4mLQCMXEe6H6-_CkkV7TQ" origin="_j4lkMCMXEe6H6-_CkkV7TQ" image="_j4lkMSMXEe6H6-_CkkV7TQ"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_XW088Bs5Ee6mQvhRa7YdPg" name="addElementaryQuantumGateUnit" subUnits="_EvJtABagEe6CBuIoO36yxw _JTp7EBwTEe6L98ukQssxnQ _6RjpQCQzEe6XAONWznPBUQ _FrHAgB5XEe6rgJVT2L8jtA">
+    <parameters xmi:id="_MUkT8B2rEe6rgJVT2L8jtA" name="cqgName" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_cz8AQCMYEe6H6-_CkkV7TQ" name="layerName" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_XnJQ4Rs5Ee6mQvhRa7YdPg" name="gateName" kind="INOUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_AZ14EB2PEe6rgJVT2L8jtA" name="maxNoGates" kind="INOUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_fFFNwB6JEe6rgJVT2L8jtA" name="phi" kind="INOUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters xmi:id="_fFGb4B6JEe6rgJVT2L8jtA" name="theta" kind="INOUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters xmi:id="_fuDxQCSHEe65g_RjOpngjQ" name="operation" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_fFHC8B6JEe6rgJVT2L8jtA" name="lambda" kind="INOUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters xmi:id="_QlfswCQxEe6XAONWznPBUQ" name="noTQubits" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_khxAMCQsEe6x5_0TE_KCEw" name="noCQubits" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_uPvjkCQ7Ee6XAONWznPBUQ" source="_MUkT8B2rEe6rgJVT2L8jtA" target="_pC8qMCQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_uPvjkSQ7Ee6XAONWznPBUQ" source="_pC8qMCQdEe6x5_0TE_KCEw" target="_MUkT8B2rEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_uPvjkiQ7Ee6XAONWznPBUQ" source="_cz8AQCMYEe6H6-_CkkV7TQ" target="_pC8qMSQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_uPvjkyQ7Ee6XAONWznPBUQ" source="_pC8qMSQdEe6x5_0TE_KCEw" target="_cz8AQCMYEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_uPvjlCQ7Ee6XAONWznPBUQ" source="_XnJQ4Rs5Ee6mQvhRa7YdPg" target="_9j3qYCQ6Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_uPvjlSQ7Ee6XAONWznPBUQ" source="_9j3qYCQ6Ee6XAONWznPBUQ" target="_XnJQ4Rs5Ee6mQvhRa7YdPg"/>
+    <parameterMappings xmi:id="_uPvjliQ7Ee6XAONWznPBUQ" source="_QlfswCQxEe6XAONWznPBUQ" target="_KErEECQxEe6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_uPvjlyQ7Ee6XAONWznPBUQ" source="_KErEECQxEe6XAONWznPBUQ" target="_QlfswCQxEe6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_2bV2kCQ8Ee6XAONWznPBUQ" source="_XnJQ4Rs5Ee6mQvhRa7YdPg" target="_2OBBsCQ7Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_2bV2kSQ8Ee6XAONWznPBUQ" source="_2OBBsCQ7Ee6XAONWznPBUQ" target="_XnJQ4Rs5Ee6mQvhRa7YdPg"/>
+    <parameterMappings xmi:id="_2bV2kiQ8Ee6XAONWznPBUQ" source="_MUkT8B2rEe6rgJVT2L8jtA" target="_2SFGgCQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_2bV2kyQ8Ee6XAONWznPBUQ" source="_2SFGgCQ0Ee6XAONWznPBUQ" target="_MUkT8B2rEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_2bV2lCQ8Ee6XAONWznPBUQ" source="_cz8AQCMYEe6H6-_CkkV7TQ" target="_2SFGgSQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_2bV2lSQ8Ee6XAONWznPBUQ" source="_2SFGgSQ0Ee6XAONWznPBUQ" target="_cz8AQCMYEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_2bWdoCQ8Ee6XAONWznPBUQ" source="_khxAMCQsEe6x5_0TE_KCEw" target="_U7y3QSQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_2bWdoSQ8Ee6XAONWznPBUQ" source="_U7y3QSQ0Ee6XAONWznPBUQ" target="_khxAMCQsEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_4wBO8CQ8Ee6XAONWznPBUQ" source="_XnJQ4Rs5Ee6mQvhRa7YdPg" target="_OQwB8CQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_4wBO8SQ8Ee6XAONWznPBUQ" source="_OQwB8CQ8Ee6XAONWznPBUQ" target="_XnJQ4Rs5Ee6mQvhRa7YdPg"/>
+    <parameterMappings xmi:id="_4wBO8iQ8Ee6XAONWznPBUQ" source="_fFFNwB6JEe6rgJVT2L8jtA" target="_Lbq_AB5ZEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_4wBO8yQ8Ee6XAONWznPBUQ" source="_Lbq_AB5ZEe6rgJVT2L8jtA" target="_fFFNwB6JEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_4wBO9CQ8Ee6XAONWznPBUQ" source="_fFGb4B6JEe6rgJVT2L8jtA" target="_Lbq_AR5ZEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_4wBO9SQ8Ee6XAONWznPBUQ" source="_Lbq_AR5ZEe6rgJVT2L8jtA" target="_fFGb4B6JEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_4wBO9iQ8Ee6XAONWznPBUQ" source="_fFHC8B6JEe6rgJVT2L8jtA" target="_Lbq_Ah5ZEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_4wBO9yQ8Ee6XAONWznPBUQ" source="_Lbq_Ah5ZEe6rgJVT2L8jtA" target="_fFHC8B6JEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_x5OhMCSHEe65g_RjOpngjQ" source="_cz8AQCMYEe6H6-_CkkV7TQ" target="_LEzFACMYEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhMSSHEe65g_RjOpngjQ" source="_LEzFACMYEe6H6-_CkkV7TQ" target="_cz8AQCMYEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhMiSHEe65g_RjOpngjQ" source="_MUkT8B2rEe6rgJVT2L8jtA" target="__DhrgCMXEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhMySHEe65g_RjOpngjQ" source="__DhrgCMXEe6H6-_CkkV7TQ" target="_MUkT8B2rEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_x5OhNCSHEe65g_RjOpngjQ" source="_XnJQ4Rs5Ee6mQvhRa7YdPg" target="_nFRugBpXEe6fYe9pd6WaDQ"/>
+    <parameterMappings xmi:id="_x5OhNSSHEe65g_RjOpngjQ" source="_nFRugBpXEe6fYe9pd6WaDQ" target="_XnJQ4Rs5Ee6mQvhRa7YdPg"/>
+    <parameterMappings xmi:id="_x5OhNiSHEe65g_RjOpngjQ" source="_fuDxQCSHEe65g_RjOpngjQ" target="_u9mdkCSHEe65g_RjOpngjQ"/>
+    <parameterMappings xmi:id="_x5OhNySHEe65g_RjOpngjQ" source="_u9mdkCSHEe65g_RjOpngjQ" target="_fuDxQCSHEe65g_RjOpngjQ"/>
+    <parameterMappings xmi:id="_x5OhOCSHEe65g_RjOpngjQ" source="_AZ14EB2PEe6rgJVT2L8jtA" target="__DiSkCMXEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhOSSHEe65g_RjOpngjQ" source="__DiSkCMXEe6H6-_CkkV7TQ" target="_AZ14EB2PEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_x5OhOiSHEe65g_RjOpngjQ" source="_khxAMCQsEe6x5_0TE_KCEw" target="_hO-IgCMVEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhOySHEe65g_RjOpngjQ" source="_hO-IgCMVEe6H6-_CkkV7TQ" target="_khxAMCQsEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_x5OhPCSHEe65g_RjOpngjQ" source="_QlfswCQxEe6XAONWznPBUQ" target="_hO-IgSMVEe6H6-_CkkV7TQ"/>
+    <parameterMappings xmi:id="_x5OhPSSHEe65g_RjOpngjQ" source="_hO-IgSMVEe6H6-_CkkV7TQ" target="_QlfswCQxEe6XAONWznPBUQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_wkjMwBwBEe6L98ukQssxnQ" name="selectAvlQubit">
+    <parameters xmi:id="_0Ht0cCP3Ee6x5_0TE_KCEw" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_0Ht0cSP3Ee6x5_0TE_KCEw" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_x-gCQRwBEe6L98ukQssxnQ" name="qbIndex" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_wkka4hwBEe6L98ukQssxnQ" name="Lhs">
+      <nodes xmi:id="_0y9t8BwBEe6L98ukQssxnQ" outgoing="_8F_PoBwBEe6L98ukQssxnQ _8cK7ABwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_xFSTUCP5Ee6x5_0TE_KCEw" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1MmV8BwBEe6L98ukQssxnQ" incoming="_8cK7ABwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_xwFj0CP5Ee6x5_0TE_KCEw" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_2Ecj8BwBEe6L98ukQssxnQ" incoming="_8F_PoBwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_336FoBwBEe6L98ukQssxnQ" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_8F_PoBwBEe6L98ukQssxnQ" source="_0y9t8BwBEe6L98ukQssxnQ" target="_2Ecj8BwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_8cK7ABwBEe6L98ukQssxnQ" source="_0y9t8BwBEe6L98ukQssxnQ" target="_1MmV8BwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_wkka4xwBEe6L98ukQssxnQ" name="Rhs">
+      <nodes xmi:id="_0y9t8RwBEe6L98ukQssxnQ" outgoing="_8F_PoRwBEe6L98ukQssxnQ _8cK7ARwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_xFS6YCP5Ee6x5_0TE_KCEw" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1MmV8RwBEe6L98ukQssxnQ" incoming="_8cK7ARwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_xwFj0SP5Ee6x5_0TE_KCEw" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_2Ecj8RwBEe6L98ukQssxnQ" incoming="_8F_PoRwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_336FoRwBEe6L98ukQssxnQ" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_8F_PoRwBEe6L98ukQssxnQ" source="_0y9t8RwBEe6L98ukQssxnQ" target="_2Ecj8RwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_8cK7ARwBEe6L98ukQssxnQ" source="_0y9t8RwBEe6L98ukQssxnQ" target="_1MmV8RwBEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_8EmA4CP2Ee6x5_0TE_KCEw" name="selectedQubitNotOccupied" conditionText="ocl:not(self.layers.quantumOperations->select(g | g.name=cqgName).oclAsType(CompositeQuantumGate).layers->select(l | l.name=layerName).quantumOperations->select(qu | qu.oclIsKindOf(AbstractQuantumGate)).oclAsType(AbstractQuantumGate)->collect(qu | Tuple{pTarget=qu.targetQubits.oclAsType(ElementSelector).index, pControl=qu.controlQubits.oclAsType(ElementSelector).index})->collect(tuple | Set{tuple.pTarget, tuple.pControl})->flatten()->asSet()->includes(qbIndex))"/>
+    <mappings xmi:id="_0y9t8hwBEe6L98ukQssxnQ" origin="_0y9t8BwBEe6L98ukQssxnQ" image="_0y9t8RwBEe6L98ukQssxnQ"/>
+    <mappings xmi:id="_1MmV8hwBEe6L98ukQssxnQ" origin="_1MmV8BwBEe6L98ukQssxnQ" image="_1MmV8RwBEe6L98ukQssxnQ"/>
+    <mappings xmi:id="_2Ecj8hwBEe6L98ukQssxnQ" origin="_2Ecj8BwBEe6L98ukQssxnQ" image="_2Ecj8RwBEe6L98ukQssxnQ"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_M2qBYBwLEe6L98ukQssxnQ" name="addTargetQubit" subUnits="_wkjMwBwBEe6L98ukQssxnQ _8p_p4BwoEe6L98ukQssxnQ">
+    <parameters xmi:id="_J0NrMCP6Ee6x5_0TE_KCEw" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_J0NrMSP6Ee6x5_0TE_KCEw" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_pUt-kCQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_Rc4loRwLEe6L98ukQssxnQ" name="qbIndex" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_PQfGoCP6Ee6x5_0TE_KCEw" source="_J0NrMCP6Ee6x5_0TE_KCEw" target="_0Ht0cCP3Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_PQfGoSP6Ee6x5_0TE_KCEw" source="_0Ht0cCP3Ee6x5_0TE_KCEw" target="_J0NrMCP6Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_PQfGoiP6Ee6x5_0TE_KCEw" source="_J0NrMSP6Ee6x5_0TE_KCEw" target="_0Ht0cSP3Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_PQfGoyP6Ee6x5_0TE_KCEw" source="_0Ht0cSP3Ee6x5_0TE_KCEw" target="_J0NrMSP6Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_PQfGpCP6Ee6x5_0TE_KCEw" source="_Rc4loRwLEe6L98ukQssxnQ" target="_x-gCQRwBEe6L98ukQssxnQ"/>
+    <parameterMappings xmi:id="_PQfGpSP6Ee6x5_0TE_KCEw" source="_x-gCQRwBEe6L98ukQssxnQ" target="_Rc4loRwLEe6L98ukQssxnQ"/>
+    <parameterMappings xmi:id="_p_vRgCQ8Ee6XAONWznPBUQ" source="_pUt-kCQ8Ee6XAONWznPBUQ" target="_ftEH0CQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_p_vRgSQ8Ee6XAONWznPBUQ" source="_ftEH0CQ8Ee6XAONWznPBUQ" target="_pUt-kCQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_p_vRgiQ8Ee6XAONWznPBUQ" source="_Rc4loRwLEe6L98ukQssxnQ" target="_DIuA0RwpEe6L98ukQssxnQ"/>
+    <parameterMappings xmi:id="_p_vRgyQ8Ee6XAONWznPBUQ" source="_DIuA0RwpEe6L98ukQssxnQ" target="_Rc4loRwLEe6L98ukQssxnQ"/>
+  </units>
+  <units xsi:type="henshin:IteratedUnit" xmi:id="_JTp7EBwTEe6L98ukQssxnQ" name="selectTargetQubits" subUnit="_M2qBYBwLEe6L98ukQssxnQ" iterations="noTQubits" strict="true">
+    <parameters xmi:id="_pC8qMCQdEe6x5_0TE_KCEw" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_pC8qMSQdEe6x5_0TE_KCEw" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_9j3qYCQ6Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_KErEECQxEe6XAONWznPBUQ" name="noTQubits" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_idJggCYCEe69ZMehIRwU3w" source="_pC8qMCQdEe6x5_0TE_KCEw" target="_J0NrMCP6Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_idJggSYCEe69ZMehIRwU3w" source="_J0NrMCP6Ee6x5_0TE_KCEw" target="_pC8qMCQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_idJggiYCEe69ZMehIRwU3w" source="_pC8qMSQdEe6x5_0TE_KCEw" target="_J0NrMSP6Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_idJggyYCEe69ZMehIRwU3w" source="_J0NrMSP6Ee6x5_0TE_KCEw" target="_pC8qMSQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_idJghCYCEe69ZMehIRwU3w" source="_9j3qYCQ6Ee6XAONWznPBUQ" target="_pUt-kCQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_idJghSYCEe69ZMehIRwU3w" source="_pUt-kCQ8Ee6XAONWznPBUQ" target="_9j3qYCQ6Ee6XAONWznPBUQ"/>
+  </units>
+  <units xsi:type="henshin:IteratedUnit" xmi:id="_SS2DoBwTEe6L98ukQssxnQ" name="selectControlQubits" subUnit="_Ljj0ACQdEe6x5_0TE_KCEw" iterations="noCQubits" strict="true">
+    <parameters xmi:id="_vdC_0CQdEe6x5_0TE_KCEw" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_vdDm4CQdEe6x5_0TE_KCEw" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_zSC_0CQ7Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_uTk4gCQsEe6x5_0TE_KCEw" name="noCQubits" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_vKISwCQ8Ee6XAONWznPBUQ" source="_vdC_0CQdEe6x5_0TE_KCEw" target="_LyuRYCQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_vKISwSQ8Ee6XAONWznPBUQ" source="_LyuRYCQdEe6x5_0TE_KCEw" target="_vdC_0CQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_vKISwiQ8Ee6XAONWznPBUQ" source="_vdDm4CQdEe6x5_0TE_KCEw" target="_LyuRYSQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_vKISwyQ8Ee6XAONWznPBUQ" source="_LyuRYSQdEe6x5_0TE_KCEw" target="_vdDm4CQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_vKISxCQ8Ee6XAONWznPBUQ" source="_zSC_0CQ7Ee6XAONWznPBUQ" target="_m7LUUCQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_vKISxSQ8Ee6XAONWznPBUQ" source="_m7LUUCQ8Ee6XAONWznPBUQ" target="_zSC_0CQ7Ee6XAONWznPBUQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_8p_p4BwoEe6L98ukQssxnQ" name="addTargetQubitForGate">
+    <parameters xmi:id="_ftEH0CQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_DIuA0RwpEe6L98ukQssxnQ" name="qbIndex" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_8qA4AhwoEe6L98ukQssxnQ" name="Lhs">
+      <nodes xmi:id="_QW2PABwpEe6L98ukQssxnQ" incoming="_eS42QB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_pVlXsCQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ZMVzMB5REe6rgJVT2L8jtA" incoming="_ezu5gB5REe6rgJVT2L8jtA" outgoing="_eS42QB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+      </nodes>
+      <nodes xmi:id="_Zjyp4B5REe6rgJVT2L8jtA" outgoing="_cMS9MB5REe6rgJVT2L8jtA _ezu5gB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_aIaZ4B5REe6rgJVT2L8jtA" incoming="_cMS9MB5REe6rgJVT2L8jtA" outgoing="_df-yoB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_clp4YB5REe6rgJVT2L8jtA" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_bQp0UB5REe6rgJVT2L8jtA" incoming="_df-yoB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <edges xmi:id="_cMS9MB5REe6rgJVT2L8jtA" source="_Zjyp4B5REe6rgJVT2L8jtA" target="_aIaZ4B5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_df-yoB5REe6rgJVT2L8jtA" source="_aIaZ4B5REe6rgJVT2L8jtA" target="_bQp0UB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_eS42QB5REe6rgJVT2L8jtA" source="_ZMVzMB5REe6rgJVT2L8jtA" target="_QW2PABwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_ezu5gB5REe6rgJVT2L8jtA" source="_Zjyp4B5REe6rgJVT2L8jtA" target="_ZMVzMB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_8qA4AxwoEe6L98ukQssxnQ" name="Rhs">
+      <nodes xmi:id="_QW22EBwpEe6L98ukQssxnQ" incoming="_eS42QR5REe6rgJVT2L8jtA" outgoing="_TDgpkBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_pVlXsSQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_RZnTkBwpEe6L98ukQssxnQ" incoming="_TDgpkBwpEe6L98ukQssxnQ" outgoing="_d1tyEB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_R3gwgBwpEe6L98ukQssxnQ" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_ZMVzMR5REe6rgJVT2L8jtA" incoming="_ezvgkB5REe6rgJVT2L8jtA" outgoing="_eS42QR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+      </nodes>
+      <nodes xmi:id="_Zjyp4R5REe6rgJVT2L8jtA" outgoing="_cMS9MR5REe6rgJVT2L8jtA _ezvgkB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_aIaZ4R5REe6rgJVT2L8jtA" incoming="_cMS9MR5REe6rgJVT2L8jtA" outgoing="_df-yoR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_clp4YR5REe6rgJVT2L8jtA" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_bQp0UR5REe6rgJVT2L8jtA" incoming="_df-yoR5REe6rgJVT2L8jtA _d1tyEB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <edges xmi:id="_TDgpkBwpEe6L98ukQssxnQ" source="_QW22EBwpEe6L98ukQssxnQ" target="_RZnTkBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_cMS9MR5REe6rgJVT2L8jtA" source="_Zjyp4R5REe6rgJVT2L8jtA" target="_aIaZ4R5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_df-yoR5REe6rgJVT2L8jtA" source="_aIaZ4R5REe6rgJVT2L8jtA" target="_bQp0UR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_d1tyEB5REe6rgJVT2L8jtA" source="_RZnTkBwpEe6L98ukQssxnQ" target="_bQp0UR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_eS42QR5REe6rgJVT2L8jtA" source="_ZMVzMR5REe6rgJVT2L8jtA" target="_QW22EBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_ezvgkB5REe6rgJVT2L8jtA" source="_Zjyp4R5REe6rgJVT2L8jtA" target="_ZMVzMR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_QW22ERwpEe6L98ukQssxnQ" origin="_QW2PABwpEe6L98ukQssxnQ" image="_QW22EBwpEe6L98ukQssxnQ"/>
+    <mappings xmi:id="_ZMVzMh5REe6rgJVT2L8jtA" origin="_ZMVzMB5REe6rgJVT2L8jtA" image="_ZMVzMR5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_ZjzQ8B5REe6rgJVT2L8jtA" origin="_Zjyp4B5REe6rgJVT2L8jtA" image="_Zjyp4R5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_aIaZ4h5REe6rgJVT2L8jtA" origin="_aIaZ4B5REe6rgJVT2L8jtA" image="_aIaZ4R5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_bQp0Uh5REe6rgJVT2L8jtA" origin="_bQp0UB5REe6rgJVT2L8jtA" image="_bQp0UR5REe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_EfauABwpEe6L98ukQssxnQ" name="addControlQubitForGate">
+    <parameters xmi:id="_eATEACQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_FUAzsBwpEe6L98ukQssxnQ" name="qbIndex" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_EfbVEBwpEe6L98ukQssxnQ" name="Lhs">
+      <nodes xmi:id="_HSmAQBwpEe6L98ukQssxnQ" incoming="_RzA1MB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_l-AX4CQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_JZx5YB5REe6rgJVT2L8jtA" incoming="_SX31wB5REe6rgJVT2L8jtA" outgoing="_RzA1MB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+      </nodes>
+      <nodes xmi:id="_J2QaAB5REe6rgJVT2L8jtA" outgoing="_O3h7gB5REe6rgJVT2L8jtA _SX31wB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_LMJO4B5REe6rgJVT2L8jtA" incoming="_PtBZEB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <nodes xmi:id="_NBxTwB5REe6rgJVT2L8jtA" incoming="_O3h7gB5REe6rgJVT2L8jtA" outgoing="_PtBZEB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_NtgYYB5REe6rgJVT2L8jtA" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_O3h7gB5REe6rgJVT2L8jtA" source="_J2QaAB5REe6rgJVT2L8jtA" target="_NBxTwB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_PtBZEB5REe6rgJVT2L8jtA" source="_NBxTwB5REe6rgJVT2L8jtA" target="_LMJO4B5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_RzA1MB5REe6rgJVT2L8jtA" source="_JZx5YB5REe6rgJVT2L8jtA" target="_HSmAQBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_SX31wB5REe6rgJVT2L8jtA" source="_J2QaAB5REe6rgJVT2L8jtA" target="_JZx5YB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_EfbVERwpEe6L98ukQssxnQ" name="Rhs">
+      <nodes xmi:id="_HSmAQRwpEe6L98ukQssxnQ" incoming="_RzA1MR5REe6rgJVT2L8jtA" outgoing="_MFCbkBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_l-AX4SQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_JhGfMBwpEe6L98ukQssxnQ" description="" incoming="_MFCbkBwpEe6L98ukQssxnQ" outgoing="_QZ34AB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_OXqlgBwpEe6L98ukQssxnQ" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_JZx5YR5REe6rgJVT2L8jtA" incoming="_SX31wR5REe6rgJVT2L8jtA" outgoing="_RzA1MR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+      </nodes>
+      <nodes xmi:id="_J2QaAR5REe6rgJVT2L8jtA" outgoing="_O3h7gR5REe6rgJVT2L8jtA _SX31wR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_LMJ18B5REe6rgJVT2L8jtA" incoming="_PtBZER5REe6rgJVT2L8jtA _QZ34AB5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <nodes xmi:id="_NBxTwR5REe6rgJVT2L8jtA" incoming="_O3h7gR5REe6rgJVT2L8jtA" outgoing="_PtBZER5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_NtgYYR5REe6rgJVT2L8jtA" value="qbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_MFCbkBwpEe6L98ukQssxnQ" source="_HSmAQRwpEe6L98ukQssxnQ" target="_JhGfMBwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractQuantumGate/controlQubits"/>
+      </edges>
+      <edges xmi:id="_O3h7gR5REe6rgJVT2L8jtA" source="_J2QaAR5REe6rgJVT2L8jtA" target="_NBxTwR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_PtBZER5REe6rgJVT2L8jtA" source="_NBxTwR5REe6rgJVT2L8jtA" target="_LMJ18B5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_QZ34AB5REe6rgJVT2L8jtA" source="_JhGfMBwpEe6L98ukQssxnQ" target="_LMJ18B5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_RzA1MR5REe6rgJVT2L8jtA" source="_JZx5YR5REe6rgJVT2L8jtA" target="_HSmAQRwpEe6L98ukQssxnQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_SX31wR5REe6rgJVT2L8jtA" source="_J2QaAR5REe6rgJVT2L8jtA" target="_JZx5YR5REe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_HSmAQhwpEe6L98ukQssxnQ" origin="_HSmAQBwpEe6L98ukQssxnQ" image="_HSmAQRwpEe6L98ukQssxnQ"/>
+    <mappings xmi:id="_JZx5Yh5REe6rgJVT2L8jtA" origin="_JZx5YB5REe6rgJVT2L8jtA" image="_JZx5YR5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_J2QaAh5REe6rgJVT2L8jtA" origin="_J2QaAB5REe6rgJVT2L8jtA" image="_J2QaAR5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_LMJ18R5REe6rgJVT2L8jtA" origin="_LMJO4B5REe6rgJVT2L8jtA" image="_LMJ18B5REe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_NBxTwh5REe6rgJVT2L8jtA" origin="_NBxTwB5REe6rgJVT2L8jtA" image="_NBxTwR5REe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_weNhwB5SEe6rgJVT2L8jtA" name="setPhi">
+    <parameters xmi:id="_GRtHwCQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_2jcaoB5SEe6rgJVT2L8jtA" name="value" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <lhs xmi:id="_weOv4B5SEe6rgJVT2L8jtA" name="Lhs">
+      <nodes xmi:id="_5DNosB5SEe6rgJVT2L8jtA" outgoing="_Eq9u8B5TEe6rgJVT2L8jtA _8hbUoB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_f7QyUCQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_5rS8YB5SEe6rgJVT2L8jtA" incoming="_Eq9u8B5TEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+      </nodes>
+      <nodes xmi:id="_4KAocB5VEe6rgJVT2L8jtA" incoming="_8hbUoB5VEe6rgJVT2L8jtA" outgoing="_8FQ9EB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_4y078B5VEe6rgJVT2L8jtA" incoming="_7mIKAB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="__hhBgB5VEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/phi"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_6vI3oB5VEe6rgJVT2L8jtA" incoming="_8FQ9EB5VEe6rgJVT2L8jtA" outgoing="_7mIKAB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <edges xmi:id="_Eq9u8B5TEe6rgJVT2L8jtA" source="_5DNosB5SEe6rgJVT2L8jtA" target="_5rS8YB5SEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+      <edges xmi:id="_7mIKAB5VEe6rgJVT2L8jtA" source="_6vI3oB5VEe6rgJVT2L8jtA" target="_4y078B5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="_8FQ9EB5VEe6rgJVT2L8jtA" source="_4KAocB5VEe6rgJVT2L8jtA" target="_6vI3oB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="_8hbUoB5VEe6rgJVT2L8jtA" source="_5DNosB5SEe6rgJVT2L8jtA" target="_4KAocB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_weOv4R5SEe6rgJVT2L8jtA" name="Rhs">
+      <nodes xmi:id="_5DNosR5SEe6rgJVT2L8jtA" outgoing="_Eq9u8R5TEe6rgJVT2L8jtA _8hbUoR5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_f7RZYCQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_5rS8YR5SEe6rgJVT2L8jtA" incoming="_Eq9u8R5TEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+        <attributes xmi:id="_B2rCYB5TEe6rgJVT2L8jtA" value="value">
+          <type href="http://www.eclipse.org/QuCircuit#//AngleParameter/phi"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_4KBPgB5VEe6rgJVT2L8jtA" incoming="_8hbUoR5VEe6rgJVT2L8jtA" outgoing="_8FQ9ER5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_4y078R5VEe6rgJVT2L8jtA" incoming="_7mIKAR5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="__hhBgR5VEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/phi"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_6vI3oR5VEe6rgJVT2L8jtA" incoming="_8FQ9ER5VEe6rgJVT2L8jtA" outgoing="_7mIKAR5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <edges xmi:id="_Eq9u8R5TEe6rgJVT2L8jtA" source="_5DNosR5SEe6rgJVT2L8jtA" target="_5rS8YR5SEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+      <edges xmi:id="_7mIKAR5VEe6rgJVT2L8jtA" source="_6vI3oR5VEe6rgJVT2L8jtA" target="_4y078R5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="_8FQ9ER5VEe6rgJVT2L8jtA" source="_4KBPgB5VEe6rgJVT2L8jtA" target="_6vI3oR5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="_8hbUoR5VEe6rgJVT2L8jtA" source="_5DNosR5SEe6rgJVT2L8jtA" target="_4KBPgB5VEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_5DNosh5SEe6rgJVT2L8jtA" origin="_5DNosB5SEe6rgJVT2L8jtA" image="_5DNosR5SEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_5rS8Yh5SEe6rgJVT2L8jtA" origin="_5rS8YB5SEe6rgJVT2L8jtA" image="_5rS8YR5SEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_4KBPgR5VEe6rgJVT2L8jtA" origin="_4KAocB5VEe6rgJVT2L8jtA" image="_4KBPgB5VEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_4y078h5VEe6rgJVT2L8jtA" origin="_4y078B5VEe6rgJVT2L8jtA" image="_4y078R5VEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_6vI3oh5VEe6rgJVT2L8jtA" origin="_6vI3oB5VEe6rgJVT2L8jtA" image="_6vI3oR5VEe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_QOacoB5WEe6rgJVT2L8jtA" name="setLambda">
+    <parameters xmi:id="_JobzACQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_TzAkwR5WEe6rgJVT2L8jtA" name="value" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <lhs xmi:id="_QObqwB5WEe6rgJVT2L8jtA" name="Lhs">
+      <nodes xmi:id="_VrnFIB5WEe6rgJVT2L8jtA" outgoing="_YJ4eYB5WEe6rgJVT2L8jtA _Zl6-kB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_2EkLwCQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_WNN9YB5WEe6rgJVT2L8jtA" incoming="_YJ4eYB5WEe6rgJVT2L8jtA" outgoing="_YzHBkB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_WsWJYB5WEe6rgJVT2L8jtA" incoming="_YzHBkB5WEe6rgJVT2L8jtA" outgoing="_ZJgvYB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <nodes xmi:id="_XCmtQB5WEe6rgJVT2L8jtA" incoming="_ZJgvYB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="_dFqb4B5WEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/lambda"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XZzFQB5WEe6rgJVT2L8jtA" incoming="_Zl6-kB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+      </nodes>
+      <edges xmi:id="_YJ4eYB5WEe6rgJVT2L8jtA" source="_VrnFIB5WEe6rgJVT2L8jtA" target="_WNN9YB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+      <edges xmi:id="_YzHBkB5WEe6rgJVT2L8jtA" source="_WNN9YB5WEe6rgJVT2L8jtA" target="_WsWJYB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="_ZJgvYB5WEe6rgJVT2L8jtA" source="_WsWJYB5WEe6rgJVT2L8jtA" target="_XCmtQB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="_Zl6-kB5WEe6rgJVT2L8jtA" source="_VrnFIB5WEe6rgJVT2L8jtA" target="_XZzFQB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_QObqwR5WEe6rgJVT2L8jtA" name="Rhs">
+      <nodes xmi:id="_VrnFIR5WEe6rgJVT2L8jtA" outgoing="_YJ4eYR5WEe6rgJVT2L8jtA _Zl6-kR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_2EkLwSQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_WNN9YR5WEe6rgJVT2L8jtA" incoming="_YJ4eYR5WEe6rgJVT2L8jtA" outgoing="_YzHBkR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_WsWJYR5WEe6rgJVT2L8jtA" incoming="_YzHBkR5WEe6rgJVT2L8jtA" outgoing="_ZJgvYR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <nodes xmi:id="_XCmtQR5WEe6rgJVT2L8jtA" incoming="_ZJgvYR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="_dFqb4R5WEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/lambda"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_XZzFQR5WEe6rgJVT2L8jtA" incoming="_Zl6-kR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+        <attributes xmi:id="_arb1IB5WEe6rgJVT2L8jtA" value="value">
+          <type href="http://www.eclipse.org/QuCircuit#//AngleParameter/lambda"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_YJ4eYR5WEe6rgJVT2L8jtA" source="_VrnFIR5WEe6rgJVT2L8jtA" target="_WNN9YR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+      <edges xmi:id="_YzHBkR5WEe6rgJVT2L8jtA" source="_WNN9YR5WEe6rgJVT2L8jtA" target="_WsWJYR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="_ZJgvYR5WEe6rgJVT2L8jtA" source="_WsWJYR5WEe6rgJVT2L8jtA" target="_XCmtQR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="_Zl6-kR5WEe6rgJVT2L8jtA" source="_VrnFIR5WEe6rgJVT2L8jtA" target="_XZzFQR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_VrnFIh5WEe6rgJVT2L8jtA" origin="_VrnFIB5WEe6rgJVT2L8jtA" image="_VrnFIR5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_WNOkcB5WEe6rgJVT2L8jtA" origin="_WNN9YB5WEe6rgJVT2L8jtA" image="_WNN9YR5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_WsWJYh5WEe6rgJVT2L8jtA" origin="_WsWJYB5WEe6rgJVT2L8jtA" image="_WsWJYR5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_XCmtQh5WEe6rgJVT2L8jtA" origin="_XCmtQB5WEe6rgJVT2L8jtA" image="_XCmtQR5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_XZzFQh5WEe6rgJVT2L8jtA" origin="_XZzFQB5WEe6rgJVT2L8jtA" image="_XZzFQR5WEe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_gXUZ4B5WEe6rgJVT2L8jtA" name="setTheta">
+    <parameters xmi:id="_YEWqACQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_ldsd0R5WEe6rgJVT2L8jtA" name="value" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <lhs xmi:id="_gXVoAB5WEe6rgJVT2L8jtA" name="Lhs">
+      <nodes xmi:id="_nbfAMB5WEe6rgJVT2L8jtA" outgoing="___04sB5WEe6rgJVT2L8jtA _A9R_cB5XEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_ccN4kCQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_oALBoB5WEe6rgJVT2L8jtA" incoming="_A9R_cB5XEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+      </nodes>
+      <nodes xmi:id="_omCu0B5WEe6rgJVT2L8jtA" incoming="___04sB5WEe6rgJVT2L8jtA" outgoing="__quLYB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_ppB10B5WEe6rgJVT2L8jtA" incoming="__QrTsB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="_CXrg4B5XEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/theta"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_qIHlkB5WEe6rgJVT2L8jtA" incoming="__quLYB5WEe6rgJVT2L8jtA" outgoing="__QrTsB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <edges xmi:id="__QrTsB5WEe6rgJVT2L8jtA" source="_qIHlkB5WEe6rgJVT2L8jtA" target="_ppB10B5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="__quLYB5WEe6rgJVT2L8jtA" source="_omCu0B5WEe6rgJVT2L8jtA" target="_qIHlkB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="___04sB5WEe6rgJVT2L8jtA" source="_nbfAMB5WEe6rgJVT2L8jtA" target="_omCu0B5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+      <edges xmi:id="_A9R_cB5XEe6rgJVT2L8jtA" source="_nbfAMB5WEe6rgJVT2L8jtA" target="_oALBoB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_gXVoAR5WEe6rgJVT2L8jtA" name="Rhs">
+      <nodes xmi:id="_nbgOUB5WEe6rgJVT2L8jtA" outgoing="___04sR5WEe6rgJVT2L8jtA _A9R_cR5XEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+        <attributes xmi:id="_ccN4kSQwEe6XAONWznPBUQ" value="gateName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_oALBoR5WEe6rgJVT2L8jtA" incoming="_A9R_cR5XEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//AngleParameter"/>
+        <attributes xmi:id="_DwAlwB5XEe6rgJVT2L8jtA" value="value">
+          <type href="http://www.eclipse.org/QuCircuit#//AngleParameter/theta"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_omCu0R5WEe6rgJVT2L8jtA" incoming="___04sR5WEe6rgJVT2L8jtA" outgoing="__quLYR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation"/>
+      </nodes>
+      <nodes xmi:id="_ppB10R5WEe6rgJVT2L8jtA" incoming="__Qr6wB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//Parameter"/>
+        <attributes xmi:id="_CXrg4R5XEe6rgJVT2L8jtA" value="true">
+          <type href="http://www.eclipse.org/QuantumOpe#//Parameter/theta"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_qIHlkR5WEe6rgJVT2L8jtA" incoming="__quLYR5WEe6rgJVT2L8jtA" outgoing="__Qr6wB5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation"/>
+      </nodes>
+      <edges xmi:id="__Qr6wB5WEe6rgJVT2L8jtA" source="_qIHlkR5WEe6rgJVT2L8jtA" target="_ppB10R5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuantumOpe#//ConcreteQuantumOperation/parameter"/>
+      </edges>
+      <edges xmi:id="__quLYR5WEe6rgJVT2L8jtA" source="_omCu0R5WEe6rgJVT2L8jtA" target="_qIHlkR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//Operation/operation"/>
+      </edges>
+      <edges xmi:id="___04sR5WEe6rgJVT2L8jtA" source="_nbgOUB5WEe6rgJVT2L8jtA" target="_omCu0R5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/operations"/>
+      </edges>
+      <edges xmi:id="_A9R_cR5XEe6rgJVT2L8jtA" source="_nbgOUB5WEe6rgJVT2L8jtA" target="_oALBoR5WEe6rgJVT2L8jtA">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate/angleParameter"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_nbgOUR5WEe6rgJVT2L8jtA" origin="_nbfAMB5WEe6rgJVT2L8jtA" image="_nbgOUB5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_oALBoh5WEe6rgJVT2L8jtA" origin="_oALBoB5WEe6rgJVT2L8jtA" image="_oALBoR5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_omCu0h5WEe6rgJVT2L8jtA" origin="_omCu0B5WEe6rgJVT2L8jtA" image="_omCu0R5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_ppB10h5WEe6rgJVT2L8jtA" origin="_ppB10B5WEe6rgJVT2L8jtA" image="_ppB10R5WEe6rgJVT2L8jtA"/>
+    <mappings xmi:id="_qIHlkh5WEe6rgJVT2L8jtA" origin="_qIHlkB5WEe6rgJVT2L8jtA" image="_qIHlkR5WEe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_FrHAgB5XEe6rgJVT2L8jtA" name="setAngleParams" subUnits="_mi-WcCSOEe65g_RjOpngjQ _weNhwB5SEe6rgJVT2L8jtA _QOacoB5WEe6rgJVT2L8jtA _gXUZ4B5WEe6rgJVT2L8jtA" strict="false" rollback="false">
+    <parameters xmi:id="_OQwB8CQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_Lbq_AB5ZEe6rgJVT2L8jtA" name="phiVal" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters xmi:id="_Lbq_AR5ZEe6rgJVT2L8jtA" name="thetaVal" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameters xmi:id="_Lbq_Ah5ZEe6rgJVT2L8jtA" name="lambdaVal" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </parameters>
+    <parameterMappings xmi:id="_TJq4sCQ8Ee6XAONWznPBUQ" source="_OQwB8CQ8Ee6XAONWznPBUQ" target="_GRtHwCQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_TJq4sSQ8Ee6XAONWznPBUQ" source="_GRtHwCQ8Ee6XAONWznPBUQ" target="_OQwB8CQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_TJq4siQ8Ee6XAONWznPBUQ" source="_Lbq_AB5ZEe6rgJVT2L8jtA" target="_2jcaoB5SEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_TJq4syQ8Ee6XAONWznPBUQ" source="_2jcaoB5SEe6rgJVT2L8jtA" target="_Lbq_AB5ZEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_UJNqICQ8Ee6XAONWznPBUQ" source="_OQwB8CQ8Ee6XAONWznPBUQ" target="_JobzACQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_UJNqISQ8Ee6XAONWznPBUQ" source="_JobzACQ8Ee6XAONWznPBUQ" target="_OQwB8CQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_UJNqIiQ8Ee6XAONWznPBUQ" source="_Lbq_Ah5ZEe6rgJVT2L8jtA" target="_TzAkwR5WEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_UJNqIyQ8Ee6XAONWznPBUQ" source="_TzAkwR5WEe6rgJVT2L8jtA" target="_Lbq_Ah5ZEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_ZZ3EYCQ8Ee6XAONWznPBUQ" source="_OQwB8CQ8Ee6XAONWznPBUQ" target="_YEWqACQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_ZZ3rcCQ8Ee6XAONWznPBUQ" source="_YEWqACQ8Ee6XAONWznPBUQ" target="_OQwB8CQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_ZZ3rcSQ8Ee6XAONWznPBUQ" source="_Lbq_AR5ZEe6rgJVT2L8jtA" target="_ldsd0R5WEe6rgJVT2L8jtA"/>
+    <parameterMappings xmi:id="_ZZ3rciQ8Ee6XAONWznPBUQ" source="_ldsd0R5WEe6rgJVT2L8jtA" target="_Lbq_AR5ZEe6rgJVT2L8jtA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_u8IbECMgEe6H6-_CkkV7TQ" name="reassignTargetQubit">
+    <parameters xmi:id="_WEpusCMhEe6H6-_CkkV7TQ" name="cqgName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_WEpusSMhEe6H6-_CkkV7TQ" name="layerName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_Y30wwCYdEe69ZMehIRwU3w" name="delQbIndex" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_WEpusiMhEe6H6-_CkkV7TQ" name="newQbIndex" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_u8K3UCMgEe6H6-_CkkV7TQ" name="Lhs">
+      <nodes xmi:id="_flwRgCMhEe6H6-_CkkV7TQ" outgoing="_n-nZ4CMhEe6H6-_CkkV7TQ __G0EgCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_uCeZwCMhEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_gfmDkCMhEe6H6-_CkkV7TQ" incoming="_n-nZ4CMhEe6H6-_CkkV7TQ" outgoing="_oSms4CMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_tJSH8CMhEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_i_vsICMhEe6H6-_CkkV7TQ" incoming="_oSms4CMhEe6H6-_CkkV7TQ" outgoing="_pPDuECMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_lIMmYCMhEe6H6-_CkkV7TQ" incoming="_pPDuECMhEe6H6-_CkkV7TQ" outgoing="_6oEWYCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_Zkm-QCYdEe69ZMehIRwU3w" value="delQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zkge8CMhEe6H6-_CkkV7TQ" incoming="_7q0ewCMhEe6H6-_CkkV7TQ _6oEWYCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <nodes xmi:id="_5rC_YCMhEe6H6-_CkkV7TQ" incoming="__G0EgCMhEe6H6-_CkkV7TQ" outgoing="_7q0ewCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_9omaECMhEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_n-nZ4CMhEe6H6-_CkkV7TQ" source="_flwRgCMhEe6H6-_CkkV7TQ" target="_gfmDkCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+      <edges xmi:id="_oSms4CMhEe6H6-_CkkV7TQ" source="_gfmDkCMhEe6H6-_CkkV7TQ" target="_i_vsICMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_pPDuECMhEe6H6-_CkkV7TQ" source="_i_vsICMhEe6H6-_CkkV7TQ" target="_lIMmYCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_7q0ewCMhEe6H6-_CkkV7TQ" source="_5rC_YCMhEe6H6-_CkkV7TQ" target="_zkge8CMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="__G0EgCMhEe6H6-_CkkV7TQ" source="_flwRgCMhEe6H6-_CkkV7TQ" target="_5rC_YCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_6oEWYCMjEe6H6-_CkkV7TQ" source="_lIMmYCMhEe6H6-_CkkV7TQ" target="_zkge8CMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_u8K3USMgEe6H6-_CkkV7TQ" name="Rhs">
+      <nodes xmi:id="_flwRgSMhEe6H6-_CkkV7TQ" outgoing="_n-nZ4SMhEe6H6-_CkkV7TQ __G0EgSMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_uCeZwSMhEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_gfmDkSMhEe6H6-_CkkV7TQ" incoming="_n-nZ4SMhEe6H6-_CkkV7TQ" outgoing="_oSms4SMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_tJSvACMhEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_i_vsISMhEe6H6-_CkkV7TQ" incoming="_oSms4SMhEe6H6-_CkkV7TQ" outgoing="_o7kKUCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_lq2AcCMhEe6H6-_CkkV7TQ" incoming="_o7kKUCMhEe6H6-_CkkV7TQ" outgoing="_0IbrYCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_p7um0CMhEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_zkge8SMhEe6H6-_CkkV7TQ" incoming="_0IbrYCMhEe6H6-_CkkV7TQ _7q0ewSMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <nodes xmi:id="_5rDmcCMhEe6H6-_CkkV7TQ" incoming="__G0EgSMhEe6H6-_CkkV7TQ" outgoing="_7q0ewSMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_9omaESMhEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <edges xmi:id="_n-nZ4SMhEe6H6-_CkkV7TQ" source="_flwRgSMhEe6H6-_CkkV7TQ" target="_gfmDkSMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+      <edges xmi:id="_oSms4SMhEe6H6-_CkkV7TQ" source="_gfmDkSMhEe6H6-_CkkV7TQ" target="_i_vsISMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_o7kKUCMhEe6H6-_CkkV7TQ" source="_i_vsISMhEe6H6-_CkkV7TQ" target="_lq2AcCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_0IbrYCMhEe6H6-_CkkV7TQ" source="_lq2AcCMhEe6H6-_CkkV7TQ" target="_zkge8SMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_7q0ewSMhEe6H6-_CkkV7TQ" source="_5rDmcCMhEe6H6-_CkkV7TQ" target="_zkge8SMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="__G0EgSMhEe6H6-_CkkV7TQ" source="_flwRgSMhEe6H6-_CkkV7TQ" target="_5rDmcCMhEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_zb3VwCMgEe6H6-_CkkV7TQ" name="checkReassignmentOccupiedOnLayer" conditionText="ocl:not(self.layers.quantumOperations->select(g | g.name=cqgName).oclAsType(CompositeQuantumGate).layers->select(l | l.name=layerName).quantumOperations->select(qu | qu.oclIsKindOf(AbstractQuantumGate)).oclAsType(AbstractQuantumGate)->collect(qu | Tuple{pTarget=qu.targetQubits.oclAsType(ElementSelector).index, pControl=qu.controlQubits.oclAsType(ElementSelector).index})->collect(tuple | Set{tuple.pTarget, tuple.pControl})->flatten()->asSet()->includes(newQbIndex))"/>
+    <mappings xmi:id="_flwRgiMhEe6H6-_CkkV7TQ" origin="_flwRgCMhEe6H6-_CkkV7TQ" image="_flwRgSMhEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_gfmDkiMhEe6H6-_CkkV7TQ" origin="_gfmDkCMhEe6H6-_CkkV7TQ" image="_gfmDkSMhEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_i_vsIiMhEe6H6-_CkkV7TQ" origin="_i_vsICMhEe6H6-_CkkV7TQ" image="_i_vsISMhEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_zkge8iMhEe6H6-_CkkV7TQ" origin="_zkge8CMhEe6H6-_CkkV7TQ" image="_zkge8SMhEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_5rDmcSMhEe6H6-_CkkV7TQ" origin="_5rC_YCMhEe6H6-_CkkV7TQ" image="_5rDmcCMhEe6H6-_CkkV7TQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_YDd54CMjEe6H6-_CkkV7TQ" name="reassignControlQubit">
+    <parameters xmi:id="_rucPsCMjEe6H6-_CkkV7TQ" name="cqgName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_rucPsSMjEe6H6-_CkkV7TQ" name="layerName" kind="OUT">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_NlkZYCYdEe69ZMehIRwU3w" name="delQbIndex" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameters xmi:id="_rucPsiMjEe6H6-_CkkV7TQ" name="newQbIndex" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_YDfvECMjEe6H6-_CkkV7TQ" name="Lhs">
+      <nodes xmi:id="_eB8qgCMjEe6H6-_CkkV7TQ" outgoing="_xJb4wCMjEe6H6-_CkkV7TQ _4fA_MCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_jGeUUCMjEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_en0XsCMjEe6H6-_CkkV7TQ" incoming="_4fA_MCMjEe6H6-_CkkV7TQ" outgoing="_5CaAICMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_kWd8kCMjEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_fHy4QCMjEe6H6-_CkkV7TQ" incoming="_xJb4wCMjEe6H6-_CkkV7TQ" outgoing="_x8H58CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_mg2wgCMjEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_fvl4ECMjEe6H6-_CkkV7TQ" incoming="_5CaAICMjEe6H6-_CkkV7TQ" outgoing="_z1jgwCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_g74sECMjEe6H6-_CkkV7TQ" incoming="_z1jgwCMjEe6H6-_CkkV7TQ" outgoing="_3sEfUCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_O_ZTECYdEe69ZMehIRwU3w" value="delQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_h07M4CMjEe6H6-_CkkV7TQ" incoming="_x8H58CMjEe6H6-_CkkV7TQ _3sEfUCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <edges xmi:id="_xJb4wCMjEe6H6-_CkkV7TQ" source="_eB8qgCMjEe6H6-_CkkV7TQ" target="_fHy4QCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_x8H58CMjEe6H6-_CkkV7TQ" source="_fHy4QCMjEe6H6-_CkkV7TQ" target="_h07M4CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_z1jgwCMjEe6H6-_CkkV7TQ" source="_fvl4ECMjEe6H6-_CkkV7TQ" target="_g74sECMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractQuantumGate/controlQubits"/>
+      </edges>
+      <edges xmi:id="_3sEfUCMjEe6H6-_CkkV7TQ" source="_g74sECMjEe6H6-_CkkV7TQ" target="_h07M4CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_4fA_MCMjEe6H6-_CkkV7TQ" source="_eB8qgCMjEe6H6-_CkkV7TQ" target="_en0XsCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+      <edges xmi:id="_5CaAICMjEe6H6-_CkkV7TQ" source="_en0XsCMjEe6H6-_CkkV7TQ" target="_fvl4ECMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_YDfvESMjEe6H6-_CkkV7TQ" name="Rhs">
+      <nodes xmi:id="_eB8qgSMjEe6H6-_CkkV7TQ" outgoing="_xJb4wSMjEe6H6-_CkkV7TQ _4fA_MSMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//CompositeQuantumGate"/>
+        <attributes xmi:id="_jGe7YCMjEe6H6-_CkkV7TQ" value="cqgName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_en0-wCMjEe6H6-_CkkV7TQ" incoming="_4fA_MSMjEe6H6-_CkkV7TQ" outgoing="_5CaAISMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer"/>
+        <attributes xmi:id="_kWejoCMjEe6H6-_CkkV7TQ" value="layerName">
+          <type href="http://www.eclipse.org/QuCircuit#//NamedElement/name"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_fHy4QSMjEe6H6-_CkkV7TQ" incoming="_xJb4wSMjEe6H6-_CkkV7TQ" outgoing="_x8H58SMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_mg2wgSMjEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_fvl4ESMjEe6H6-_CkkV7TQ" incoming="_5CaAISMjEe6H6-_CkkV7TQ" outgoing="_0dGo8CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+      </nodes>
+      <nodes xmi:id="_gg5ZMCMjEe6H6-_CkkV7TQ" incoming="_0dGo8CMjEe6H6-_CkkV7TQ" outgoing="_18pJECMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//ElementSelector"/>
+        <attributes xmi:id="_oJT8ECMjEe6H6-_CkkV7TQ" value="newQbIndex">
+          <type href="http://www.eclipse.org/QuCircuit#//ElementSelector/index"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_h07z8CMjEe6H6-_CkkV7TQ" incoming="_x8H58SMjEe6H6-_CkkV7TQ _18pJECMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumRegister"/>
+      </nodes>
+      <edges xmi:id="_xJb4wSMjEe6H6-_CkkV7TQ" source="_eB8qgSMjEe6H6-_CkkV7TQ" target="_fHy4QSMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//QuantumOperation/targetQubits"/>
+      </edges>
+      <edges xmi:id="_x8H58SMjEe6H6-_CkkV7TQ" source="_fHy4QSMjEe6H6-_CkkV7TQ" target="_h07z8CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+      <edges xmi:id="_4fA_MSMjEe6H6-_CkkV7TQ" source="_eB8qgSMjEe6H6-_CkkV7TQ" target="_en0-wCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractCompositeGate/layers"/>
+      </edges>
+      <edges xmi:id="_5CaAISMjEe6H6-_CkkV7TQ" source="_en0-wCMjEe6H6-_CkkV7TQ" target="_fvl4ESMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Layer/quantumOperations"/>
+      </edges>
+      <edges xmi:id="_0dGo8CMjEe6H6-_CkkV7TQ" source="_fvl4ESMjEe6H6-_CkkV7TQ" target="_gg5ZMCMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//AbstractQuantumGate/controlQubits"/>
+      </edges>
+      <edges xmi:id="_18pJECMjEe6H6-_CkkV7TQ" source="_gg5ZMCMjEe6H6-_CkkV7TQ" target="_h07z8CMjEe6H6-_CkkV7TQ">
+        <type href="http://www.eclipse.org/QuCircuit#//Selector/register"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_Eb_ukCMkEe6H6-_CkkV7TQ" name="checkReassignmentOccupiedOnLayer" conditionText="ocl:not(self.layers.quantumOperations->select(g | g.name=cqgName).oclAsType(CompositeQuantumGate).layers->select(l | l.name=layerName).quantumOperations->select(qu | qu.oclIsKindOf(AbstractQuantumGate)).oclAsType(AbstractQuantumGate)->collect(qu | Tuple{pTarget=qu.targetQubits.oclAsType(ElementSelector).index, pControl=qu.controlQubits.oclAsType(ElementSelector).index})->collect(tuple | Set{tuple.pTarget, tuple.pControl})->flatten()->asSet()->includes(newQbIndex))"/>
+    <mappings xmi:id="_eB8qgiMjEe6H6-_CkkV7TQ" origin="_eB8qgCMjEe6H6-_CkkV7TQ" image="_eB8qgSMjEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_en0-wSMjEe6H6-_CkkV7TQ" origin="_en0XsCMjEe6H6-_CkkV7TQ" image="_en0-wCMjEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_fHy4QiMjEe6H6-_CkkV7TQ" origin="_fHy4QCMjEe6H6-_CkkV7TQ" image="_fHy4QSMjEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_fvl4EiMjEe6H6-_CkkV7TQ" origin="_fvl4ECMjEe6H6-_CkkV7TQ" image="_fvl4ESMjEe6H6-_CkkV7TQ"/>
+    <mappings xmi:id="_h07z8SMjEe6H6-_CkkV7TQ" origin="_h07M4CMjEe6H6-_CkkV7TQ" image="_h07z8CMjEe6H6-_CkkV7TQ"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_Ljj0ACQdEe6x5_0TE_KCEw" name="addControlQubit" subUnits="_wkjMwBwBEe6L98ukQssxnQ _EfauABwpEe6L98ukQssxnQ">
+    <parameters xmi:id="_LyuRYCQdEe6x5_0TE_KCEw" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_LyuRYSQdEe6x5_0TE_KCEw" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_m7LUUCQ8Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_LyuRYyQdEe6x5_0TE_KCEw" name="qbIndex" kind="VAR">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_cAgHkCQdEe6x5_0TE_KCEw" source="_LyuRYCQdEe6x5_0TE_KCEw" target="_0Ht0cCP3Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_cAgHkSQdEe6x5_0TE_KCEw" source="_0Ht0cCP3Ee6x5_0TE_KCEw" target="_LyuRYCQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_cAgHkiQdEe6x5_0TE_KCEw" source="_LyuRYSQdEe6x5_0TE_KCEw" target="_0Ht0cSP3Ee6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_cAgHkyQdEe6x5_0TE_KCEw" source="_0Ht0cSP3Ee6x5_0TE_KCEw" target="_LyuRYSQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_cAgHlCQdEe6x5_0TE_KCEw" source="_LyuRYyQdEe6x5_0TE_KCEw" target="_x-gCQRwBEe6L98ukQssxnQ"/>
+    <parameterMappings xmi:id="_cAgHlSQdEe6x5_0TE_KCEw" source="_x-gCQRwBEe6L98ukQssxnQ" target="_LyuRYyQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_nzrpoCQ8Ee6XAONWznPBUQ" source="_m7LUUCQ8Ee6XAONWznPBUQ" target="_eATEACQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_nzsQsCQ8Ee6XAONWznPBUQ" source="_eATEACQ8Ee6XAONWznPBUQ" target="_m7LUUCQ8Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_nzsQsSQ8Ee6XAONWznPBUQ" source="_LyuRYyQdEe6x5_0TE_KCEw" target="_FUAzsBwpEe6L98ukQssxnQ"/>
+    <parameterMappings xmi:id="_nzsQsiQ8Ee6XAONWznPBUQ" source="_FUAzsBwpEe6L98ukQssxnQ" target="_LyuRYyQdEe6x5_0TE_KCEw"/>
+  </units>
+  <units xsi:type="henshin:ConditionalUnit" xmi:id="_6RjpQCQzEe6XAONWznPBUQ" name="selectControlQubitsIfPresent" if="_VndDYCQ0Ee6XAONWznPBUQ" then="_SS2DoBwTEe6L98ukQssxnQ" else="_mi-WcCSOEe65g_RjOpngjQ">
+    <parameters xmi:id="_2OBBsCQ7Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_2SFGgCQ0Ee6XAONWznPBUQ" name="cqgName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_2SFGgSQ0Ee6XAONWznPBUQ" name="layerName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_U7y3QSQ0Ee6XAONWznPBUQ" name="noCQubits" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <parameterMappings xmi:id="_62lIQCQ7Ee6XAONWznPBUQ" source="_2SFGgCQ0Ee6XAONWznPBUQ" target="_vdC_0CQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_62lIQSQ7Ee6XAONWznPBUQ" source="_vdC_0CQdEe6x5_0TE_KCEw" target="_2SFGgCQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_62lIQiQ7Ee6XAONWznPBUQ" source="_2SFGgSQ0Ee6XAONWznPBUQ" target="_vdDm4CQdEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_62lIQyQ7Ee6XAONWznPBUQ" source="_vdDm4CQdEe6x5_0TE_KCEw" target="_2SFGgSQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_62lIRCQ7Ee6XAONWznPBUQ" source="_2OBBsCQ7Ee6XAONWznPBUQ" target="_zSC_0CQ7Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_62lIRSQ7Ee6XAONWznPBUQ" source="_zSC_0CQ7Ee6XAONWznPBUQ" target="_2OBBsCQ7Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_62lIRiQ7Ee6XAONWznPBUQ" source="_U7y3QSQ0Ee6XAONWznPBUQ" target="_uTk4gCQsEe6x5_0TE_KCEw"/>
+    <parameterMappings xmi:id="_62lIRyQ7Ee6XAONWznPBUQ" source="_uTk4gCQsEe6x5_0TE_KCEw" target="_U7y3QSQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_-bKpUCQ7Ee6XAONWznPBUQ" source="_2OBBsCQ7Ee6XAONWznPBUQ" target="_8sYMQCQ7Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_-bKpUSQ7Ee6XAONWznPBUQ" source="_8sYMQCQ7Ee6XAONWznPBUQ" target="_2OBBsCQ7Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_-bKpUiQ7Ee6XAONWznPBUQ" source="_U7y3QSQ0Ee6XAONWznPBUQ" target="_YbG2wCQ0Ee6XAONWznPBUQ"/>
+    <parameterMappings xmi:id="_-bKpUyQ7Ee6XAONWznPBUQ" source="_YbG2wCQ0Ee6XAONWznPBUQ" target="_U7y3QSQ0Ee6XAONWznPBUQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_VndDYCQ0Ee6XAONWznPBUQ" name="checkControlQubitPresent">
+    <parameters xmi:id="_8sYMQCQ7Ee6XAONWznPBUQ" name="gateName" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_YbG2wCQ0Ee6XAONWznPBUQ" name="noCQubits" kind="IN">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </parameters>
+    <lhs xmi:id="_Vne4kCQ0Ee6XAONWznPBUQ" name="Lhs">
+      <nodes xmi:id="_cLGWkCQ0Ee6XAONWznPBUQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation"/>
+        <attributes xmi:id="_fLTYMCQ0Ee6XAONWznPBUQ" value="noCQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfControlQubits"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_Vne4kSQ0Ee6XAONWznPBUQ" name="Rhs">
+      <nodes xmi:id="_cLGWkSQ0Ee6XAONWznPBUQ">
+        <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation"/>
+        <attributes xmi:id="_fLTYMSQ0Ee6XAONWznPBUQ" value="noCQubits">
+          <type href="http://www.eclipse.org/QuantumOpe#//FixedQuantumOperation/numberOfControlQubits"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <attributeConditions xmi:id="_h9B48CQ0Ee6XAONWznPBUQ" name="isPresent" conditionText="ocl:noCQubits>0"/>
+    <mappings xmi:id="_cLGWkiQ0Ee6XAONWznPBUQ" origin="_cLGWkCQ0Ee6XAONWznPBUQ" image="_cLGWkSQ0Ee6XAONWznPBUQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_mi-WcCSOEe65g_RjOpngjQ" name="trueRule">
+    <lhs xmi:id="_mjBZwCSOEe65g_RjOpngjQ" name="Lhs"/>
+    <rhs xmi:id="_mjBZwSSOEe65g_RjOpngjQ" name="Rhs"/>
+  </units>
+</henshin:Module>

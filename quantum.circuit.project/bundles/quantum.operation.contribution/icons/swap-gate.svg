@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg37338"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="swap-gate.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview37340"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="16"
+     inkscape:cx="13.34375"
+     inkscape:cy="8.09375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs37335" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#5599ff;stroke-width:0.267718"
+       id="rect37364"
+       width="4.2333336"
+       height="4.2498693"
+       x="0.0082682287"
+       y="0.0082682278" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.81928px;line-height:1.25;font-family:sans-serif;stroke-width:0.23494"
+       x="0.70109403"
+       y="5.2491727"
+       id="text41831-3-8-2"
+       transform="scale(1.2445954,0.80347397)"><tspan
+         sodipodi:role="line"
+         id="tspan41829-1-2-4"
+         style="stroke-width:0.23494"
+         x="0.70109403"
+         y="5.2491727">X</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.81928px;line-height:1.25;font-family:sans-serif;stroke-width:0.23494"
+       x="0.72766894"
+       y="2.1980083"
+       id="text41831-3-8-2-0"
+       transform="scale(1.2445954,0.80347397)"><tspan
+         sodipodi:role="line"
+         id="tspan41829-1-2-4-2"
+         style="stroke-width:0.23494"
+         x="0.72766894"
+         y="2.1980083">X</tspan></text>
+    <rect
+       style="fill:#000000;stroke-width:0.298837"
+       id="rect43072"
+       width="0.38860679"
+       height="2.4722004"
+       x="1.9016926"
+       y="0.84335941" />
+  </g>
+</svg>

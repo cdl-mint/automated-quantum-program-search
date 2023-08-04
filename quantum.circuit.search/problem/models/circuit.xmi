@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<qucircuit:QuantumCircuit
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:qucircuit="http://www.eclipse.org/QuCircuit"
+    name="MomotExample">
+  <quantumRegisters
+      name="qr"
+      numberOfQubits="3"/>
+  <classicRegisters
+      name="cr"
+      numberOfBits="3"/>
+  <layers name="L1">
+    <quantumOperations
+        xsi:type="qucircuit:ElementaryQuantumGate"
+        name="e1">
+      <operations>
+        <operation
+            href="../../src-library/quantum-operation.quope#Hadamard"/>
+      </operations>
+      <targetQubits
+          xsi:type="qucircuit:RangeSelector"
+          begin="0"
+          end="2"/>
+    </quantumOperations>
+  </layers>
+  <layers name="L2">
+    <quantumOperations
+        xsi:type="qucircuit:CompositeQuantumGate"
+        name="c1">
+      <targetQubits
+          xsi:type="qucircuit:ElementSelector"
+          register="//@quantumRegisters.0"
+          index="0"/>
+      <targetQubits
+          xsi:type="qucircuit:ElementSelector"
+          register="//@quantumRegisters.0"
+          index="1"/>
+      <targetQubits
+          xsi:type="qucircuit:ElementSelector"
+          register="//@quantumRegisters.0"
+          index="2"/>
+    </quantumOperations>
+  </layers>
+</qucircuit:QuantumCircuit>

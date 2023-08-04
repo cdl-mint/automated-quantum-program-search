@@ -1,0 +1,17 @@
+Number of variables: 2
+  Variable[0]: -Placeholder-
+
+  Variable[1]: -Placeholder-
+
+Number of attributes: 4
+  AggregatedFitness: -0.5
+  rank: 0
+  Normalized Objectives: [5.0E9, 0.0, 0.0, 0.0, 0.0]
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -0.5
+  nrOfGates: 0.0
+  Depth: 0.0
+  nrOfNonlocalGates: 0.0
+  nrOfParams: 0.0
+Number of constraints: 0

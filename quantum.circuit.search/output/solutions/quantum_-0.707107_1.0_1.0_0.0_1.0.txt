@@ -1,0 +1,54 @@
+Number of variables: 2
+  Variable[0]: Result assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L2'
+- parameter 'gateName' => 'Orp'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.9496236406857781
+- parameter 'theta' => 0.5127394563075811
+- parameter 'operation' => 'RY'
+- parameter 'lambda' => 0.5300098526692063
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 0
+	Match for rule 'addElementaryQuantumGateToLayer':
+- parameter 'gateName' => 'Orp'
+- parameter 'maxNoGates' => 4
+	Match for rule 'selectAvlQubit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L2'
+	Match for rule 'addTargetQubitForGate':
+- parameter 'gateName' => 'Orp'
+- parameter 'qbIndex' => 0
+	Match for rule 'trueRule':
+- no parameters
+- no nodes
+	Match for rule 'trueRule':
+- no parameters
+- no nodes
+	Match for rule 'setTheta':
+- parameter 'gateName' => 'Orp'
+- parameter 'value' => 0.5127394563075811
+
+  Variable[1]: Match for rule 'reassignTargetQubit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L2'
+- parameter 'delQbIndex' => 0
+- parameter 'newQbIndex' => 2
+- node #1 => qucircuit.impl.CompositeQuantumGateImpl@1d891373 (name: c1) (inverseForm: false)
+- node #2 => qucircuit.impl.LayerImpl@4b13aca4 (name: L2)
+- node #3 => qucircuit.impl.ElementaryQuantumGateImpl@2404ab3a (name: Orp) (inverseForm: false)
+- node #4 => qucircuit.impl.ElementSelectorImpl@1f27b6fc (index: 0)
+- node #5 => qucircuit.impl.QuantumRegisterImpl@69c7b870 (name: qr) (numberOfQubits: 3)
+- node #6 => qucircuit.impl.ElementSelectorImpl@593fcbe7 (index: 2)
+
+Number of attributes: 3
+  AggregatedFitness: 2.292893
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -0.707107
+  nrOfGates: 1.0
+  Depth: 1.0
+  nrOfNonlocalGates: 0.0
+  nrOfParams: 1.0
+Number of constraints: 0

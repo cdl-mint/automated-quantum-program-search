@@ -1,0 +1,27 @@
+Number of variables: 2
+  Variable[0]: -Placeholder-
+
+  Variable[1]: Assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L5'
+- parameter 'gateName' => 'Pui'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.3963740845090924
+- parameter 'theta' => 0.5038367043410992
+- parameter 'operation' => 'CRY'
+- parameter 'lambda' => 0.8074456667622596
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 1
+
+Number of attributes: 4
+  AggregatedFitness: 3.396447
+  rank: 0
+  Normalized Objectives: [3.96447E9, 0.5, 0.5, 0.5, 1.0]
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -0.603553
+  nrOfGates: 1.0
+  Depth: 1.0
+  nrOfNonlocalGates: 1.0
+  nrOfParams: 1.0
+Number of constraints: 0

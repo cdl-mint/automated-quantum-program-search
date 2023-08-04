@@ -1,0 +1,35 @@
+/*******************************************************************************
+ * This file provides additional validation for Quantum Circuit Models
+ *******************************************************************************/
+ 
+import qcircuitMM : 'http://www.jku.at/QCircuit' 
+
+package QCircuit  
+--
+--context qcircuitMM::Layer 
+-- 
+--inv QPrimitiveOrSlot ('The layer should have either a sequence of slots or a quantum primitive') :
+--	self.slots->size() > 0 implies self.qPrimitive.oclIsUndefined() = true  
+-- 
+--inv SlotOrQPrimitive ('The layer should have either a sequence of slots or a quantum primitive') :
+--	self.qPrimitive.oclIsUndefined() = true implies self.slots->size() = true
+--
+--context qcircuitMM::QuantumGate 
+--
+--def : getQuantumCircuit(qg : qcircuitMM::QuantumGate) : 
+--	qcircuitMM::QuantumCircuit = self.oclContainer().oclContainer().oclContainer().oclAsType(QuantumCircuit)
+-- 
+--context qcircuitMM::UnaryQG
+--
+--inv ValidQBit ('The QBit index should between zero and ' + (getQuantumCircuit(self).numberOfQbits - 1).toString()) : 
+--	self.qbit >= 0 and self.qbit < getQuantumCircuit(self).numberOfQbits
+--
+--context qcircuitMM::BinaryQG
+--
+--inv ValidTopQBit ('The QBit index should between zero and ' + (getQuantumCircuit(self).numberOfQbits - 1).toString()) : 
+--	self.topQbit >= 0 and self.topQbit < getQuantumCircuit(self).numberOfQbits
+--	
+--inv ValidBottomQBit ('The QBit index should between zero and ' + (getQuantumCircuit(self).numberOfQbits - 1).toString()) : 
+--	self.bottomQbit >= 0 and self.bottomQbit < getQuantumCircuit(self).numberOfQbits
+
+endpackage

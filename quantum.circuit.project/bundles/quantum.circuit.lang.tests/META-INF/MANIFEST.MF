@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: quantum.circuit.lang.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: quantum.circuit.lang.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: quantum.circuit.lang.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: quantum.circuit.lang,
+ quantum.circuit.mm,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: quantum.circuit.lang.tests;x-internal=true

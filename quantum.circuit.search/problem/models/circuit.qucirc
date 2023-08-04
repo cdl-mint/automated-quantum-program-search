@@ -1,0 +1,16 @@
+QuantumCircuit MomotExample {
+	QuantumRegister qr {NumberOfQubits 3}
+	ClassicRegister cr {NumberOfBits 3}
+	Layer L1 {
+		ElementaryQuantumGate e1 {
+			operation Hadamard
+			targetQubits [(0-2)]
+		}
+	}
+	Layer L2 {
+		ElementaryQuantumGate e1 {
+			operation Hadamard
+			targetQubits [(0-2)]
+		}
+	}
+}

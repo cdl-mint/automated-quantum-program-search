@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/quantum.operation.library.mm/src-gen" creationIcons="false"
+    editDirectory="/quantum.operation.library.mm.edit/src-gen" editorDirectory="/quantum.operation.library.mm.editor/src-gen"
+    modelPluginID="quantum.operation.library.mm" modelName="QuantumOpe" editPluginClass="quantum.operation.library.mm.quope.provider.QuantumOpeEditPlugin"
+    editorPluginClass="quantum.operation.library.mm.quope.presentation.QuantumOpeEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    testSuiteClass="quantum.operation.library.mm.quope.tests.QuantumOpeAllTests" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="quantum.operation.library.mm.edit"
+    editorPluginID="quantum.operation.library.mm.editor" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>QuantumOpe.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Quope" disposableProviderFactory="true" ecorePackage="QuantumOpe.ecore#/">
+    <genClasses ecoreClass="QuantumOpe.ecore#//QuantumOperationLibrary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuantumOpe.ecore#//QuantumOperationLibrary/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="QuantumOpe.ecore#//ConcreteQuantumOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuantumOpe.ecore#//ConcreteQuantumOperation/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuantumOpe.ecore#//ConcreteQuantumOperation/fixedQuantumOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteQuantumOperation/allowsQubo"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuantumOpe.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="QuantumOpe.ecore#//FixedQuantumOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//FixedQuantumOperation/numberOfTargetQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//FixedQuantumOperation/numberOfControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//FixedQuantumOperation/numberOfClassicBits"/>
+    </genClasses>
+    <genClasses ecoreClass="QuantumOpe.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//Parameter/theta"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//Parameter/phi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//Parameter/lambda"/>
+    </genClasses>
+    <genClasses ecoreClass="QuantumOpe.ecore#//ConcreteLoopOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsFixedControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsFixedTargetQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsControlQubitsIterationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsTargetQubitsIterationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsControlQubitsBlockSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsTargetQubitsBlockSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsIncrementControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsIncrementTargetQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsIterations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//ConcreteLoopOperation/allowsMultipleOperations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuantumOpe.ecore#//AbstractQuantumOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//AbstractQuantumOperation/paletteIconPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//AbstractQuantumOperation/styleIconPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuantumOpe.ecore#//AbstractQuantumOperation/reversible"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuantumOpe.ecore#//AbstractQuantumOperation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuantumOpe.ecore#//AbstractQuantumOperation/reverse"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

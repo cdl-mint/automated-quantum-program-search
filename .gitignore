@@ -1,0 +1,4 @@
+/.metadata/
+quantum.circuit.search/eval-scripts/testenv/
+quantum.circuit.search/eval-scripts/__pycache__
+

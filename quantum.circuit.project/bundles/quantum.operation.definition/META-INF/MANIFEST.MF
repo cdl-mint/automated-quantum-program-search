@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Definition
+Bundle-SymbolicName: quantum.operation.definition;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: quantum.operation.definition
+Bundle-RequiredExecutionEnvironment: JavaSE-16
+Require-Bundle: quantum.circuit.mm;bundle-version="0.1.0",
+ quantum.operation.library.mm;bundle-version="0.1.0",
+ org.eclipse.core.runtime;bundle-version="3.22.0"
+Export-Package: quantum.operation.definition,
+ quantum.operation.definition.api,
+ quantum.operation.definition.api.utils

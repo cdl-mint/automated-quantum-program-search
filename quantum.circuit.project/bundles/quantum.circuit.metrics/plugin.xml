@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="quantum.circuit.metrics"
+            name="Quantum Circuit Designer">
+      </category>
+      <view
+            category="quantum.circuit.metrics"
+            class="quantum.circuit.metrics.views.QuantumCircuitMetricsView"
+            icon="icons/quantum-metrics-icon.png"
+            id="quantum.circuit.metrics.views.QuantumCircuitMetricsView"
+            inject="true"
+            name="Quantum Circuit Metrics ">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="quantum.circuit.metrics.views.QuantumCircuitMetricsView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg34962"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="cz-gate.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34964"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="23.147924"
+     inkscape:cx="11.080907"
+     inkscape:cy="7.020068"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs34959" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#5599ff;stroke-width:0.266019"
+       id="rect34988"
+       width="4.2291412"
+       height="4.240571"
+       x="0.011430111"
+       y="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.47903px;line-height:1.25;font-family:sans-serif;stroke-width:0.289919"
+       x="-0.10019715"
+       y="3.1529961"
+       id="text36334"
+       transform="scale(0.91260959,1.0957588)"><tspan
+         sodipodi:role="line"
+         id="tspan36332"
+         style="stroke-width:0.289919"
+         x="-0.10019715"
+         y="3.1529961">CZ</tspan></text>
+  </g>
+</svg>

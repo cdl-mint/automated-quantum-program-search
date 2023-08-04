@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="quantum.circuit.ui.category"
+            name="Quantum Circuit">
+      </category>
+      <wizard
+            category="quantum.circuit.ui.category"
+            class="quantum.circuit.ui.wizard.QuantumCircuitWizard"
+            hasPages="true"
+            icon="icons/quantum-project-icon.png"
+            id="quantum.circuit.project"
+            name="Quantum Circuit Project"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>

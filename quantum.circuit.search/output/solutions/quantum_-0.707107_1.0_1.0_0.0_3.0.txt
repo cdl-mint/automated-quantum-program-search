@@ -1,0 +1,61 @@
+Number of variables: 2
+  Variable[0]: Result assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L4'
+- parameter 'gateName' => 'Orc'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.987455734981834
+- parameter 'theta' => 0.49276245264276475
+- parameter 'operation' => 'UGate'
+- parameter 'lambda' => 0.11447081157080885
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 0
+	Match for rule 'addElementaryQuantumGateToLayer':
+- parameter 'gateName' => 'Orc'
+- parameter 'maxNoGates' => 4
+	Match for rule 'selectAvlQubit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L4'
+	Match for rule 'addTargetQubitForGate':
+- parameter 'gateName' => 'Orc'
+- parameter 'qbIndex' => 0
+	Match for rule 'trueRule':
+- no parameters
+- no nodes
+	Match for rule 'trueRule':
+- no parameters
+- no nodes
+	Match for rule 'setPhi':
+- parameter 'gateName' => 'Orc'
+- parameter 'value' => 0.987455734981834
+	Match for rule 'setLambda':
+- parameter 'gateName' => 'Orc'
+- parameter 'value' => 0.11447081157080885
+	Match for rule 'setTheta':
+- parameter 'gateName' => 'Orc'
+- parameter 'value' => 0.49276245264276475
+
+  Variable[1]: Match for rule 'reassignTargetQubit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L4'
+- parameter 'delQbIndex' => 0
+- parameter 'newQbIndex' => 2
+- node #1 => qucircuit.impl.CompositeQuantumGateImpl@1ee27d73 (name: c1) (inverseForm: false)
+- node #2 => qucircuit.impl.LayerImpl@18a25bbd (name: L4)
+- node #3 => qucircuit.impl.ElementaryQuantumGateImpl@66ec4409 (name: Orc) (inverseForm: false)
+- node #4 => qucircuit.impl.ElementSelectorImpl@6ee5f485 (index: 0)
+- node #5 => qucircuit.impl.QuantumRegisterImpl@77bc2e16 (name: qr) (numberOfQubits: 3)
+- node #6 => qucircuit.impl.ElementSelectorImpl@4e83a98 (index: 2)
+
+Number of attributes: 4
+  AggregatedFitness: 4.292892999999999
+  rank: 0
+  Normalized Objectives: [0.0, 1.0, 1.0, 0.0, 1.0]
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -0.707107
+  nrOfGates: 1.0
+  Depth: 1.0
+  nrOfNonlocalGates: 0.0
+  nrOfParams: 3.0
+Number of constraints: 0

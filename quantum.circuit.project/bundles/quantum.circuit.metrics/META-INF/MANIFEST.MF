@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Metrics
+Bundle-SymbolicName: quantum.circuit.metrics;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: quantum.circuit.metrics.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ quantum.circuit.mm;bundle-version="0.1.0",
+ org.eclipse.sirius.diagram.ui;bundle-version="6.5.0",
+ quantum.operation.contribution;bundle-version="1.0.0",
+ quantum.operation.library.mm
+Bundle-RequiredExecutionEnvironment: JavaSE-16
+Automatic-Module-Name: quantum.circuit.metrics
+Bundle-ActivationPolicy: lazy
+Import-Package: javax.inject
+Export-Package: quantum.circuit.metrics.utils

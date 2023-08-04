@@ -1,0 +1,37 @@
+Number of variables: 2
+  Variable[0]: Result assignment for unit 'addElementaryQuantumGateUnit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L4'
+- parameter 'gateName' => 'Ord'
+- parameter 'maxNoGates' => 4
+- parameter 'phi' => 0.8695227227865407
+- parameter 'theta' => 0.042179166757120745
+- parameter 'operation' => 'CZ'
+- parameter 'lambda' => 0.79668582977745
+- parameter 'noTQubits' => 1
+- parameter 'noCQubits' => 1
+
+  Variable[1]: Match for rule 'reassignControlQubit':
+- parameter 'cqgName' => 'c1'
+- parameter 'layerName' => 'L4'
+- parameter 'delQbIndex' => 0
+- parameter 'newQbIndex' => 1
+- node #1 => qucircuit.impl.CompositeQuantumGateImpl@701c223a (name: c1) (inverseForm: false)
+- node #2 => qucircuit.impl.LayerImpl@51424203 (name: L4)
+- node #3 => qucircuit.impl.ElementSelectorImpl@237b2852 (index: 1)
+- node #4 => qucircuit.impl.ElementaryQuantumGateImpl@48a46b0f (name: Ord) (inverseForm: false)
+- node #5 => qucircuit.impl.ElementSelectorImpl@726a8729 (index: 0)
+- node #6 => qucircuit.impl.QuantumRegisterImpl@3a38e4dc (name: qr) (numberOfQubits: 3)
+
+Number of attributes: 4
+  AggregatedFitness: 2.5
+  rank: 0
+  Normalized Objectives: [5.0E9, 0.0, 0.0, 0.0, 0.0]
+  crowdingDistance: Infinity
+Number of objectives: 5
+  Overlap: -0.5
+  nrOfGates: 1.0
+  Depth: 1.0
+  nrOfNonlocalGates: 1.0
+  nrOfParams: 0.0
+Number of constraints: 0

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<quope:QuantumOperationLibrary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:quope="http://www.eclipse.org/QuantumOpe" name="QuantumLibrary">
+  <operations xsi:type="quope:ConcreteQuantumOperation" name="CRY" paletteIconPath="platform:/plugin/quantum.operation.contribution/icons/cnot-gate.png" styleIconPath="">
+    <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+    <parameter theta="true"/>
+    <fixedQuantumOperation numberOfTargetQubits="1" numberOfControlQubits="1" numberOfClassicBits="0"/>
+  </operations>
+  <operations xsi:type="quope:ConcreteQuantumOperation" name="CZ" paletteIconPath="platform:/plugin/quantum.operation.contribution/icons/cnot-gate.png" styleIconPath="">
+    <type href="http://www.eclipse.org/QuCircuit#//ElementaryQuantumGate"/>
+    <parameter/>
+    <fixedQuantumOperation numberOfTargetQubits="1" numberOfControlQubits="1" numberOfClassicBits="0"/>
+  </operations>
+  <operations xsi:type="quope:ConcreteLoopOperation" name="StaticLoop">
+    <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+  </operations>
+  <operations xsi:type="quope:ConcreteLoopOperation" name="Power2Loop">
+    <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+  </operations>
+  <operations xsi:type="quope:ConcreteLoopOperation" name="GeneralLoop">
+    <type href="http://www.eclipse.org/QuCircuit#//LoopOperation"/>
+  </operations>
+</quope:QuantumOperationLibrary>

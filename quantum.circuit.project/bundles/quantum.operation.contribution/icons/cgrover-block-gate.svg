@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg4895"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="cgrover-block-gate.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4897"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="23.147924"
+     inkscape:cx="17.388168"
+     inkscape:cy="9.0936881"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4892" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#b380ff;stroke-width:0.264944"
+       id="rect4921"
+       width="4.1948509"
+       height="4.217711"
+       x="0.034290332"
+       y="0.022860222" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.47565px;line-height:1.25;font-family:sans-serif;stroke-width:0.289637"
+       x="0.38645008"
+       y="2.8251312"
+       id="text6251"
+       transform="scale(0.70417582,1.4200999)"><tspan
+         sodipodi:role="line"
+         id="tspan6249"
+         style="stroke-width:0.289637"
+         x="0.38645008"
+         y="2.8251312">CG</tspan></text>
+  </g>
+</svg>

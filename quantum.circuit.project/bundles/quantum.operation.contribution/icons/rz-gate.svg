@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="rz-gate.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="11.573962"
+     inkscape:cx="26.309055"
+     inkscape:cy="18.792182"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="0.086400837"
+       y="0.061053068"
+       width="15.984153"
+       height="15.923103"
+       id="rect11863" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff0000;stroke-width:0.266237"
+       id="rect31"
+       width="4.2291408"
+       height="4.2129874"
+       x="0.022860222"
+       y="0.016153624" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text11861"
+       style="line-height:1.25;font-family:sans-serif;font-size:12px;white-space:pre;shape-inside:url(#rect11863)" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.36062px;line-height:1.25;font-family:sans-serif;stroke-width:0.280051"
+       x="0.064530432"
+       y="3.1893559"
+       id="text13123"
+       transform="scale(0.90594497,1.1038198)"><tspan
+         sodipodi:role="line"
+         id="tspan13121"
+         style="stroke-width:0.280051"
+         x="0.064530432"
+         y="3.1893559">RZ</tspan></text>
+  </g>
+</svg>

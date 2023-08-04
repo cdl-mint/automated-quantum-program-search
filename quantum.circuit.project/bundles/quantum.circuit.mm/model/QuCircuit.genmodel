@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/quantum.circuit.mm/src-gen" editDirectory="/quantum.circuit.mm.edit/src-gen"
+    editorDirectory="/quantum.circuit.mm.editor/src-gen" modelPluginID="quantum.circuit.mm"
+    modelName="QuCircuit" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/quantum.circuit.mm.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../quantum.operation.library.mm/model/QuantumOpe.genmodel#//quope ../../qubo.mm/model/Qubo.genmodel#//qubo"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>QuCircuit.ecore</foreignModel>
+  <genPackages prefix="Qucircuit" disposableProviderFactory="true" ecorePackage="QuCircuit.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="QuCircuit.ecore#//ITERATION_TYPE">
+      <genEnumLiterals ecoreEnumLiteral="QuCircuit.ecore#//ITERATION_TYPE/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="QuCircuit.ecore#//ITERATION_TYPE/SHIFT"/>
+      <genEnumLiterals ecoreEnumLiteral="QuCircuit.ecore#//ITERATION_TYPE/CHANGE_BLOCK"/>
+    </genEnums>
+    <genClasses ecoreClass="QuCircuit.ecore#//QuantumCircuit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumCircuit/quantumRegisters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumCircuit/classicRegisters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumCircuit/layers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumCircuit/nrOfGates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumCircuit/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumCircuit/nrOfNonlocalGates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumCircuit/nrOfParams"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumCircuit/overlap"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuCircuit.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//QuantumRegister">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//QuantumRegister/numberOfQubits"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//ClassicRegister">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//ClassicRegister/numberOfBits"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//Layer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//Layer/quantumOperations"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//ClassicControl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//ClassicControl/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//ClassicControl/classicRegister"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuCircuit.ecore#//QuantumOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumOperation/classicControl"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumOperation/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//QuantumOperation/targetQubits"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuCircuit.ecore#//AbstractQuantumGate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//AbstractQuantumGate/controlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//AbstractQuantumGate/inverseForm"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//StatePreparation"/>
+    <genClasses ecoreClass="QuCircuit.ecore#//Measurement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//Measurement/classicBits"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//ElementaryQuantumGate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//ElementaryQuantumGate/angleParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//CompositeQuantumGate"/>
+    <genClasses ecoreClass="QuCircuit.ecore#//AngleParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//AngleParameter/theta"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//AngleParameter/phi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//AngleParameter/lambda"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuCircuit.ecore#//AbstractCompositeGate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//AbstractCompositeGate/layers"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//LoopOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/iterations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//LoopOperation/fixedControlQubits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//LoopOperation/fixedTargetQubits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//LoopOperation/loop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/incrementControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/incrementTargetQubits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//LoopOperation/loopTargetQubits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//LoopOperation/loopControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/targetQubitsBlockSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/controlQubitsBlockSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/controlQubitsIterationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/targetQubitsIterationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/incrementBlockTargetQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/incrementBlockControlQubits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//LoopOperation/incrementBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="QuCircuit.ecore#//Selector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//Selector/register"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//ElementSelector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//ElementSelector/index"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//RangeSelector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//RangeSelector/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute QuCircuit.ecore#//RangeSelector/end"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//Operation/qubo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference QuCircuit.ecore#//Operation/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="QuCircuit.ecore#//Register"/>
+  </genPackages>
+</genmodel:GenModel>

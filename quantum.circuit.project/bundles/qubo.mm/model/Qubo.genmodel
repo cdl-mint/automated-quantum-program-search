@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/qubo.mm/src-gen" creationIcons="false" editDirectory="/qubo.mm.edit/src-gen"
+    editorDirectory="/qubo.mm.editor/src-gen" modelPluginID="qubo.mm" modelName="Qubo"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Qubo.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Qubo" disposableProviderFactory="true" ecorePackage="Qubo.ecore#/">
+    <genClasses ecoreClass="Qubo.ecore#//Qubo">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Qubo.ecore#//Qubo/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="Qubo.ecore#//Matrix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Qubo.ecore#//Matrix/rows"/>
+    </genClasses>
+    <genClasses ecoreClass="Qubo.ecore#//Row">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Qubo.ecore#//Row/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="Qubo.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Qubo.ecore#//Column/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Qubo.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Qubo.ecore#//NamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

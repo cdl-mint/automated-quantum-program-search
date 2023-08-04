@@ -1,0 +1,150 @@
+package momot.^search
+
+import at.ac.tuwien.big.momot.^search.^fitness.dimension.TransformationLengthDimension
+import at.ac.tuwien.big.momot.^search.algorithm.operator.mutation.TransformationPlaceholderMutation
+import qucircuit.QucircuitPackage
+import at.ac.tuwien.big.momot.problem.unit.parameter.increment.IncrementalStringValue
+import qucircuit.QuantumCircuit
+import quope.QuopePackage
+import at.ac.tuwien.big.momot.problem.unit.parameter.increment.IncrementalIntegerValue
+import quantum.circuit.^search.FitnessCalculator
+import at.ac.tuwien.big.momot.problem.unit.parameter.fix.FixValue
+import at.ac.tuwien.big.momot.problem.unit.parameter.random.RandomDoubleValue
+import at.ac.tuwien.big.momot.^search.solution.repair.TransformationPlaceholderRepairer
+import at.ac.tuwien.big.momot.^search.solution.repair.TransformationUnitRepairer
+import at.ac.tuwien.big.momot.^search.algorithm.operator.mutation.TransformationVariableMutation
+import qucircuit.QucircuitFactory
+import qucircuit.CompositeQuantumGate
+import at.ac.tuwien.big.momot.^search.solution.executor.SearchHelper
+import org.moeaframework.core.operator.TournamentSelection
+import org.moeaframework.core.operator.TwoPointCrossover
+import at.ac.tuwien.big.moea.^experiment.executor.listener.SeedRuntimePrintListener
+
+initialization = {
+   QucircuitPackage.eINSTANCE.eClass // register package
+   QuopePackage.eINSTANCE.eClass
+   FitnessCalculator.init(2, "eval-scripts/testenv");
+   System.out.println("Search started.");
+}
+
+search = {
+	model          = {
+		file       = "problem/models/circuit.xmi"
+		adapt      = {
+         var maxNumberOfLayers = 4
+         var cm = root as QuantumCircuit
+         var oracle = cm.layers.get(1).quantumOperations.filter[quOpe | quOpe instanceof CompositeQuantumGate].get(0) as CompositeQuantumGate
+         
+         for(i : 0 ..< maxNumberOfLayers) {
+            var newLayer = QucircuitFactory::eINSTANCE.createLayer()
+            newLayer.name = "L" + (i+2)
+            oracle.layers.add(newLayer)
+         }
+         return cm
+      }
+	}
+	solutionLength  = 2
+
+	transformations = {
+		modules = [ "transformations/quantum_ops.henshin" ]
+		ignoreUnits = [
+			 "quantum_ops::quantum::selectLayer",
+		  "quantum_ops::quantum::addElementaryQuantumGateToLayer",
+		  "quantum_ops::quantum::addQubitAsTarget",
+
+		  "quantum_ops::quantum::addQubitAsControl",
+		  "quantum_ops::quantum::selectControlQubits",
+		  "quantum_ops::quantum::selectTargetQubits",
+		  "quantum_ops::quantum::selectAvlQubit",
+		  "quantum_ops::quantum::addControlQubit",
+		  "quantum_ops::quantum::addTargetQubit",
+		  "quantum_ops::quantum::getLayer",
+		  		  "quantum_ops::quantum::trueRule",
+		  
+		  "quantum_ops::quantum::addTargetQubitForGate",
+		  "quantum_ops::quantum::addControlQubitForGate",
+		  "quantum_ops::quantum::selectCompQuantumGate",
+		  "quantum_ops::quantum::addAngleParameter",
+		  "quantum_ops::quantum::setAngleParams",
+		  "quantum_ops::quantum::setPhi",
+		  "quantum_ops::quantum::setTheta",
+		  "quantum_ops::quantum::setLambda",		
+		 "quantum_ops::quantum::checkControlQubitPresent",		  
+		  "quantum_ops::quantum::selectControlQubitsIfPresent"
+		  
+		  
+		  
+			
+		]
+		parameterValues = {
+		    "quantum_ops::quantum::addElementaryQuantumGateUnit::gateName":new IncrementalStringValue("Orc")
+			"quantum_ops::quantum::addElementaryQuantumGateUnit::maxNoGates": new FixValue(4)
+			"quantum_ops::quantum::addElementaryQuantumGateUnit::phi": new RandomDoubleValue()
+			"quantum_ops::quantum::addElementaryQuantumGateUnit::theta": new RandomDoubleValue()
+			"quantum_ops::quantum::addElementaryQuantumGateUnit::lambda": new RandomDoubleValue()
+	    }
+	}
+
+	fitness         = {
+		objectives = {
+			Overlap: maximize {FitnessCalculator.overlap(root as QuantumCircuit)}
+			nrOfGates: minimize {FitnessCalculator.nrOfGates(root as QuantumCircuit)}
+			Depth: minimize {FitnessCalculator.depth(root as QuantumCircuit)}
+			nrOfNonlocalGates: minimize {FitnessCalculator.nrOfNonlocalGates(root as QuantumCircuit)}
+			nrOfParams: minimize {FitnessCalculator.nrOfParams(root as QuantumCircuit)}
+		}
+		    solutionRepairer = new TransformationPlaceholderRepairer()
+		
+	}
+
+	algorithms      = {
+		NSGAIII : moea.createNSGAIII( new TournamentSelection(2),
+      		new TwoPointCrossover(0.8), 
+      		new TransformationPlaceholderMutation(0.05),
+      		new TransformationVariableMutation(orchestration.searchHelper, 0.2))
+	}
+}
+
+experiment = {
+	populationSize    =	25
+	maxEvaluations    = 5000
+	nrRuns            = 1
+	progressListeners = [ new SeedRuntimePrintListener]
+}
+
+analysis = {
+	indicators       = [ hypervolume generationalDistance ]
+	significance     = 0.01
+	show             = [ aggregateValues statisticalSignificance individualValues ]
+	outputFile       = "output/analysis/analysis.txt"
+	boxplotDirectory = "output/analysis/"
+	printOutput
+}
+
+results = {
+	adaptModels = {
+		// remove empty classes 
+		val cm = root as QuantumCircuit
+		val oracle = cm.layers.get(1).quantumOperations.filter[quOpe | quOpe instanceof CompositeQuantumGate].get(0) as CompositeQuantumGate
+	
+		val emptyLayers = oracle.layers.filter[l | l.quantumOperations.size == 0]
+		oracle.layers.removeAll(emptyLayers)
+	}
+	objectives = {
+		outputFile      = "output/objectives/objective_values.txt"
+		printOutput
+	}
+
+	solutions  = {
+		outputFile      = "output/solutions/objective_values.txt"
+		outputDirectory = "output/solutions/"
+	}
+
+	models     = {
+		outputDirectory = "output/models/"
+	}
+}
+
+finalization = {
+	System.out.println("Search finished.");
+}
